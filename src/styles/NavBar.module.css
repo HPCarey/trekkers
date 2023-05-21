@@ -2,33 +2,15 @@
     background-color: #E6DEB9;
     border: 1px solid #907A48;
 }
-* {
-    box-sizing: border-box;
-  }
-  
-  a {
-    color: #555555;
-    transition: color ease-in-out 0.3s;
-  }
-  
-  a:hover {
-    text-decoration: none;
-  }
-  
-  a:hover i {
-    color: #84BD34;
-    transition: color ease-in-out 0.3s;
-  }
-  
-  i {
+.NavLink {
+    padding: 5px;
     color: #2E1F1E;
-    font-size: 1.6rem;
-    padding: 7px;
-    vertical-align: middle;
   }
-  
-  i:hover {
-    cursor: pointer;
-    transition: color ease-in-out 0.3s;
-    color: #685375;
+
+  .NavLink:hover {
+   color: #84BD34;
+}
+  .Active i {
+    color: #84BD34;
   }
+
