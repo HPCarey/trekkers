@@ -1,10 +1,37 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
 import logo from "../assets/logo-transparent.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
+import { CurrentUserContext } from "../App";
 
 const NavBar = () => {
+  const currentUser = useContext(CurrentUserContext);
+  const loggedInIcons = <>{currentUser?.username}</>
+  {
+    /*Displays the navigation for logged out users */
+  }
+  const loggedOutIcons = (
+    <>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/signin"
+      >
+        <i className="fas fa-sign-in-alt"></i>
+        Sign In
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/signup"
+      >
+        <i className="fas fa-user-plus"></i>
+        Sign Up
+      </NavLink>
+    </>
+  );
+
   return (
     <Navbar className={styles.NavBar} expand="md" fixed="top">
       <Container>
@@ -24,24 +51,8 @@ const NavBar = () => {
             >
               <i className="fas fa-home"></i>Home
             </NavLink>
-            <NavLink
-              className={styles.NavLink}
-              activeClassName={styles.Active}
-              to="/signin"
-            >
-              <i className="fas fa-sign-in-alt"></i>
-              Sign In
-            </NavLink>
-            <NavLink
-              className={styles.NavLink}
-              activeClassName={styles.Active}
-              to="/signup"
-            >
-              <i className="fas fa-user-plus"></i>
-              Sign Up
-            </NavLink>
 
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown title={currentUser?.username} id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -52,6 +63,7 @@ const NavBar = () => {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
+            {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>
       </Container>
