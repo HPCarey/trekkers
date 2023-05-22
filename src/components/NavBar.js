@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
 import logo from "../assets/logo-transparent.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
-import { CurrentUserContext } from "../App";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 const NavBar = () => {
-  const currentUser = useContext(CurrentUserContext);
+  const currentUser = useCurrentUser();
   const loggedInIcons = <>{currentUser?.username}</>
   {
     /*Displays the navigation for logged out users */
@@ -52,7 +52,7 @@ const NavBar = () => {
               <i className="fas fa-home"></i>Home
             </NavLink>
 
-            <NavDropdown title={currentUser?.username} id="basic-nav-dropdown">
+            {/* <NavDropdown title={currentUser?.username} id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -62,7 +62,7 @@ const NavBar = () => {
               <NavDropdown.Item href="#action/3.4">
                 Separated link
               </NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>
