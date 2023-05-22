@@ -5,13 +5,15 @@ import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
-import Form from "react-bootstrap/Form";
-import Alert from "react-bootstrap/Alert";
-import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Image from "react-bootstrap/Image";
-import Container from "react-bootstrap/Container";
+import {
+  Form,
+  Button,
+  Image,
+  Col,
+  Row,
+  Container,
+  Alert,
+} from "react-bootstrap";
 import axios from "axios";
 
 const SignUpForm = () => {
@@ -42,11 +44,13 @@ const SignUpForm = () => {
       setErrors(err.response?.data);
     }
   };
+
   return (
     <Row className={styles.Row}>
       <Col className="my-auto py-2 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>sign up</h1>
+
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
               <Form.Label className="d-none">username</Form.Label>
@@ -81,6 +85,7 @@ const SignUpForm = () => {
                 {message}
               </Alert>
             ))}
+
             <Form.Group controlId="password2">
               <Form.Label className="d-none">Confirm password</Form.Label>
               <Form.Control
@@ -111,6 +116,7 @@ const SignUpForm = () => {
             ))}
           </Form>
         </Container>
+
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signin">
             Already have an account? <span>Sign in</span>
@@ -123,9 +129,7 @@ const SignUpForm = () => {
       >
         <Image
           className={`${appStyles.FillerImage}`}
-          src={
-            "https://res.cloudinary.com/dg4yiogei/image/upload/v1684618286/hero-hikers-big_o09ogs.jpg"
-          }
+          src={"https://codeinstitute.s3.amazonaws.com/AdvancedReact/hero2.jpg"}
         />
       </Col>
     </Row>
