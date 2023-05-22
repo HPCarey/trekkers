@@ -85,7 +85,7 @@ function PostCreateForm() {
   const textFields = (
     <div className="text-center">
       <Form.Group>
-        <Form.Label>Title</Form.Label>
+        <Form.Label>Trail name</Form.Label>
         <Form.Control
           type="text"
           name="title"
@@ -98,22 +98,29 @@ function PostCreateForm() {
           {message}
         </Alert>
       ))}
-
       <Form.Group>
-        <Form.Label>Content</Form.Label>
+        <Form.Label>Trail difficulty:</Form.Label>
         <Form.Control
-          as="textarea"
-          rows={6}
-          name="content"
-          value={content}
+          name="difficulty"
+          value={difficulty}
           onChange={handleChange}
-        />
+          aria-label="difficulty"
+          as="select"
+          size="sm"
+          custom
+        >
+          <option value="Easy">Easy</option>
+          <option value="Moderate">Moderate</option>
+          <option value="Challenging">Challenging</option>
+          <option value="Difficult">Difficult</option>
+        </Form.Control>
       </Form.Group>
-      {errors?.content?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
+      {errors?.difficulty?.map((message, idx) => (
+        <Alert variant="danger" key={idx}>
           {message}
         </Alert>
       ))}
+
       <Form.Group>
         <Form.Label>Country:</Form.Label>
         <Form.Control
@@ -145,36 +152,37 @@ function PostCreateForm() {
         </Alert>
       ))}
       <Form.Group>
-        <Form.Label>Trail difficulty:</Form.Label>
+        <Form.Label>Content</Form.Label>
         <Form.Control
-          type="int"
-          name="difficulty"
-          value={difficulty}
+          as="textarea"
+          rows={6}
+          name="content"
+          value={content}
           onChange={handleChange}
-          aria-label="difficulty"
         />
       </Form.Group>
-      {errors?.difficulty?.map((message, idx) => (
-        <Alert variant="danger" key={idx}>
+      {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
-            <Form.Group>
+
+      <Form.Group>
         <Form.Label>Rate this trail:</Form.Label>
         <Rating
-                  type="int"
-                  name="rating"
-                  value={rating}
-                  onClick={handleRating} />
+          type="int"
+          name="rating"
+          value={rating}
+          onClick={handleRating}
+        />
+        {errors?.rating?.map((message, idx) => (
+          <Alert variant="danger" key={idx}>
+            {message}
+          </Alert>
+        ))}
       </Form.Group>
-      {errors?.difficulty?.map((message, idx) => (
-        <Alert variant="danger" key={idx}>
-          {message}
-        </Alert>
-      ))}
 
       <br />
-
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
