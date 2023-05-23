@@ -7,6 +7,7 @@ import Avatar from "../../components/Avatar";
 import { Rating } from "react-simple-star-rating";
 import { axiosRes } from "../../api/axiosDefaults";
 
+
 const Post = (props) => {
   const {
     id,

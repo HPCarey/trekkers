@@ -86,7 +86,7 @@ function PostCreateForm() {
   };
 
   const textFields = (
-    <div className="text-center">
+    <div className={`${"text-center"} ${styles.Form}`}>
       <Form.Group>
         <Form.Label>Trail name</Form.Label>
         <Form.Control

@@ -1,3 +1,8 @@
 .Container {
     min-height: 343px;
+    background-color: #E6DEB9;
   }
+.Form {
+  background-color: #E6DEB9;
+  padding: 0px;
+}
