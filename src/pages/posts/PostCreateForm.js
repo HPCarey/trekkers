@@ -38,8 +38,11 @@ function PostCreateForm() {
   const imageInput = useRef(null);
   const history = useHistory();
 
-  const handleRating = (rating) => {
-    setRating(rating);
+//   const handleRating = (rating) => {
+//     setRating(rating);
+//   };
+  const handleRating = (rate) => {
+    setRating(rate / 5);
   };
 
   const handleChange = (event) => {
@@ -152,7 +155,7 @@ function PostCreateForm() {
         </Alert>
       ))}
       <Form.Group>
-        <Form.Label>Content</Form.Label>
+        <Form.Label>Trail description</Form.Label>
         <Form.Control
           as="textarea"
           rows={6}
