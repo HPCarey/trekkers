@@ -26,9 +26,9 @@ function PostCreateForm() {
     title: "",
     content: "",
     image: "",
-    time: "",
     country: "",
     location: "",
+    difficulty: "Easy", // Set the default value here
   });
 
   const { title, content, image, country, location, difficulty } = postData;
