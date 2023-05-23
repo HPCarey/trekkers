@@ -15,7 +15,7 @@
         "react-infinite-scroll-component": "^6.1.0",
         "react-router-dom": "^5.3.0",
         "react-scripts": "4.0.3",
-        "react-simple-star-rating": "^4.1.1",
+        "react-simple-star-rating": "^4.1.1 --legacy-peer-deps",
         "web-vitals": "^1.1.2"
     },
     "scripts": {
@@ -47,7 +47,8 @@
         "msw": "^0.35.0"
     },
     "engines": {
-        "node": "16.19.1",
-        "npm": "8.19.3"
-    }
+        "node": "16.x",
+        "npm": "8.5.5"
+      }
 }
+
