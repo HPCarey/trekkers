@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
-import styles from "../../styles/CommentCreateEdit.module.css";
+import styles from "../../styles/CommentCreateEdit.module.css"
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 
@@ -42,8 +42,8 @@ function CommentCreateForm(props) {
   };
 
   return (
-    <Form classname={`${styles.Color} mt-2`} onSubmit={handleSubmit}> 
-      <Form.Group classname={styles.Color}> 
+    <Form className="mt-2" onSubmit={handleSubmit}>
+      <Form.Group>
         <InputGroup>
           <Link to={`/profiles/${profile_id}`}>
             <Avatar src={profileImage} />
