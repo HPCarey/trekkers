@@ -42,8 +42,8 @@ function CommentCreateForm(props) {
   };
 
   return (
-    <Form className="mt-2" onSubmit={handleSubmit}>
-      <Form.Group>
+    <Form classname={`${styles.Color} mt-2`} onSubmit={handleSubmit}> 
+      <Form.Group classname={styles.Color}> 
         <InputGroup>
           <Link to={`/profiles/${profile_id}`}>
             <Avatar src={profileImage} />
