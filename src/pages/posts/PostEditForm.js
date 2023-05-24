@@ -213,7 +213,7 @@ function PostEditForm() {
           type="int"
           name="rating"
           value={rating}
-          onClick={setRating}
+          onClick={handleRating}
         />
         {errors?.rating?.map((message, idx) => (
           <Alert variant="danger" key={idx}>
