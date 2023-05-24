@@ -43,7 +43,7 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
 
 ### **User Stories**
 
-#### Epic 1: Authentication
+#### **Epic 1: Authentication**
 
 1. Sign up: As a **user** I can **create an account** so that I can **access all the site features**
  
@@ -57,7 +57,7 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
 
 6. Create superuser: As a **site owner** I can **create a superuser** so that **I can give admin users access to the admin panel**.
 
-#### Epic 2: Navigation:
+#### **Epic 2: Navigation:**
 
 7. As a **user** I can **quickly view my logged in/out status in the navbar** so that I can **decide on my next action**
  
@@ -70,7 +70,7 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
 
 11. Popular profiles list: As a **logged in user** I can **view other user’s profile names and avatars” so that I can **easily identify and follow other users”
 
-#### Epic 3: Posts
+#### **Epic 3: Posts**
 12. Create a post: As a **logged in user** I can **create a new post** so that I can **share my experiences and suggestions for good hikes and walks I’ve been on**.
 
 13. Edit a post: As a **logged in user** I can**edit my post** so that I can **revise my content**
@@ -89,7 +89,7 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
 19. Search posts: As a **user** I can **search posts** so that I can **find a post by author, trail name or location**
 
 
-#### Epic 4: Comments
+#### **Epic 4: Comments**
 20. Create a comment: As a **user** I can **leave a comment under a post** so that I can **express my opinion and engage with the content and the community**
 
 21. Comment date: As a **user** I can **see the comment date** so that I can **know how long a go a comment was left**
@@ -101,7 +101,7 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
 24. Delete comments: As a **user** I can **delete my comment** so that I can **remove it from the post**
  
 
-#### Epic 5: Profiles
+#### **Epic 5: Profiles**
 25. Profile page: As a **user** I can **view another user’s profile page** so that I can **see their posts and their bio**
  
 
@@ -114,7 +114,37 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
 28. Edit Profile: As a **user** I can **edit my profile** so that I can **update my personal details**
  
 29. Update username and password: As a **user** I can **update my username/password** so that I can **make alterations as needed**
+#
+### **Technologies used** 
+### Languages used
+- [Python](https://www.python.org/) 
 
+- [HTML](https://www.w3schools.com/html/html_intro.asp)
+
+- [CSS](https://www.w3schools.com/css/css_intro.asp)
+
+- [JS](https://reactjs.org/)
+
+### Databases
+- [Postgresql](https://www.postgresql.org/)
+
+### Frameworks, tools and libraries
+#### Back-End
+- [Django Rest Framework](https://www.django-rest-framework.org/)
+- [Psycopg2](https://pypi.org/project/psycopg2/)
+   - PostgreSQL database adapter for python
+- [JSON Web Tokens](https://jwt.io/)
+   
+#### Front-End
+- [React JS](https://reactjs.org/)
+- [JSON Web Tokens](https://jwt.io/)
+- [React Bootstrap](https://react-bootstrap-v4.netlify.app/)
+- [React Router](https://v5.reactrouter.com/web/guides/quick-start)
+  
+
+#### Cloud storage and deployment services
+- [Cloudinary](https://cloudinary.com/)
+- [Heroku](https://www.heroku.com/)
 
 ## **Credits**
 ### Code Institute
