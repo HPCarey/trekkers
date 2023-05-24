@@ -1,70 +1,133 @@
-# Getting Started with Create React App
+# Trekkers
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Trekkers is a social media platform for hikers and people who love the outdoors. It was created using React and Django Rest Frameowork. The purpose of the site is to allow users to share posts about trails they like in their local area or hiking trips they've taken. 
+#
+* [Deployed Front-End page](https://trekkers.herokuapp.com/)
+* [Deployed Back-End page](https://pp5-trekkers-api.herokuapp.com/)
+* [Backend repository](https://github.com/HPCarey/pp5-trekkers-api)
 
-## Available Scripts
+#
+### Agile Planning
+#### **GitHub Project Board**
 
-In the project directory, you can run:
+This project was devised using agile methodologies.
+Epics, user stories, bugs and issues are recorded on the [Project Board](https://github.com/users/HPCarey/projects/5/views/1).
 
-### `npm start`
+![Screenshot of project board](/readme/kanban-board.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### **Github Issues**
+Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project issues and labels. 
+* A list of Frontend Bugs can be viewed via the Frontend Bug label. 
+* A list of backend bugs can be viewed via the Backend bug label.
+* A list of all bugs can be viewed via the bugs label.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+#### **Wireframes**
+ * The plan for this project is based on the Code Institute Moments walkthrough project. 
+ * Most of the UI is based on the same kind of features and functionality but customised for the specific purposes of this site
+ * Initial plans were to include an event model, but that has been assigned as a future feature to help focus on the minimal viable product of  the site. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### **List of Wireframe pages**
+- [Home page](readme/home_page.png)
+- [Sign up page](readme/sign_up_page.png)
+- [Sign in page](readme/sign_in_page.png)
+- [Creat post form](readme/create_post_form.png)
+- [Profile page](readme/profile_page.png)
+#
+### **Epics**
+#### Authentication
+#### Navigation
+#### Posts
+#### Comments
+#### Profiles
 
-### `npm run build`
+### **User Stories**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Epic 1: Authentication
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Sign up: As a **user** I can **create an account** so that I can **access all the site features**
+ 
+2. Sign in: As a **user** I can **login** so that I can **access features only available to logged in users **
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Sign out: As a **user** I can **logout** so that I can **exit my account and prevent others from gaining access**
 
-### `npm run eject`
+4. Refreshing access tokens: As a **user** I can **maintain my logged in status for 24 hours** so that I can **easily interact with the app throughout the day**.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. Create admin panel: As a **site owner** I can **access the admin panel** so that **I have access to all site features and functionality**.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+6. Create superuser: As a **site owner** I can **create a superuser** so that **I can give admin users access to the admin panel**.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Epic 2: Navigation:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+7. As a **user** I can **quickly view my logged in/out status in the navbar** so that I can **decide on my next action**
+ 
+	
+8. Routing: As a **user** I can **view the navbar on every page** so that I can **easily navigate through the site**.
 
-## Learn More
+9. Conditional Rendering: As a **logged out user** I can **view sign in and sign up options** so that I can **easily tell whether I am logged in and can log in easily if not**.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+10. Avatar: As a **logged in user** I can **view my profile link and avatar image on the navbar** so that I can **quickly see that I am logged in”
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+11. Popular profiles list: As a **logged in user** I can **view other user’s profile names and avatars” so that I can **easily identify and follow other users”
 
-### Code Splitting
+#### Epic 3: Posts
+12. Create a post: As a **logged in user** I can **create a new post** so that I can **share my experiences and suggestions for good hikes and walks I’ve been on**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+13. Edit a post: As a **logged in user** I can**edit my post** so that I can **revise my content**
 
-### Analyzing the Bundle Size
+14. Delete a post: As a **logged in user** I can **delete my post** so that I can **remove content I have posted**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+15. View all posts: As a **user** I can **view all posts** so that I can **see what trails other users have walked and how they were**
 
-### Making a Progressive Web App
+16. View post detail: As a **user** I can **view individual post details** so that I can ** view other details and comments about the post**
+ 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+17.: Like a post: As a **logged in user** I can **like a post** so that I can **quickly show my appreciation for another users content**
 
-### Advanced Configuration
+18. View liked posts: As a **logged in user** I can **view liked posts** so that I can **easily find the posts about trails that interested me**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+19. Search posts: As a **user** I can **search posts** so that I can **find a post by author, trail name or location**
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### Epic 4: Comments
+20. Create a comment: As a **user** I can **leave a comment under a post** so that I can **express my opinion and engage with the content and the community**
 
-### `npm run build` fails to minify
+21. Comment date: As a **user** I can **see the comment date** so that I can **know how long a go a comment was left**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+22. View comments: As a **user** I can **view other comments** so that I can **see what others have said**
+
+23. Edit comments: As a **user** I can **edit my comment** so that I can **revise the information**
+
+24. Delete comments: As a **user** I can **delete my comment** so that I can **remove it from the post**
+ 
+
+#### Epic 5: Profiles
+25. Profile page: As a **user** I can **view another user’s profile page** so that I can **see their posts and their bio**
+ 
+
+
+26. User stats: As a **user** I can **see stats via a user profile** so that I can **see how many posts/followers/following/comments they have**
+
+27. Follow/Unfollow a user: As a **logged in user** I can **follow other users whose content is more relevant or meaningful to me** so that I can **view content filtered by the users I follow**
+
+
+28. Edit Profile: As a **user** I can **edit my profile** so that I can **update my personal details**
+ 
+29. Update username and password: As a **user** I can **update my username/password** so that I can **make alterations as needed**
+
+
+## **Credits**
+### Code Institute
+
+This project is a variation and laregely based on the [Code Institute Moments](https://github.com/Code-Institute-Solutions/moments) walkthrough project.
+It contains styles and logic from that project which have bee modified for the prupose of this one.
+
+### Resources for creating the star rating component: 
+1.	[NPMJS: react-simple-star-rating]( https://www.npmjs.com/package/react-star-ratings) 
+2. Geeksforgeeks: [Posititive Integer field](https://www.geeksforgeeks.org/positiveintegerfield-django-models/)
+2.	Stack overflow: [Set a default min/max value for inetger field](https://stackoverflow.com/questions/42425933/how-do-i-set-a-default-max-and-min-value-for-an-integerfield-django)
+
+### Bug fixes sources:
+1. Due to a change in material by Code Institute to reflect their new IDE provider, I did not have access to the template for gitpod. As a result I had to deal with a lot of bugs in the setup and deployment stage, and any time a package needed to be installed. The list of sources for this as well as my troubleshooting steps and solutions can be found under the "Frontedn bug" label in [Issues](https://github.com/HPCarey/trekkers/issues).
+
+2.Downgrade React version [Dev.to]( https://dev.to/ifeanyichima/how-to-downgrade-from-react-18-to-1702-818)
