@@ -233,9 +233,9 @@ function PostCreateForm() {
                 </Form.Label>
               )}
 
-              <Form.File
+              <Form.File 
                 id="image-upload"
-                accept="image/*"
+                accept="image/"
                 onChange={handleChangeImage}
                 ref={imageInput}
               />
@@ -249,7 +249,7 @@ function PostCreateForm() {
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
-        <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
+        <Col md={12} lg={4} className="d-none d-md-block p-0 p-md-2">
           <Container className={appStyles.Content}>{textFields}</Container>
         </Col>
       </Row>
