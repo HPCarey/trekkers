@@ -21,7 +21,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 
 function PostCreateForm() {
-  useRedirect('loggedOut');
+  useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
   const [postData, setPostData] = useState({
@@ -43,9 +43,6 @@ function PostCreateForm() {
   const handleRating = (rating) => {
     setRating(rating);
   };
-//   const handleRating = (rate) => {
-//     setRating(rate / 5);
-//   };
 
   const handleChange = (event) => {
     setPostData({
@@ -232,14 +229,16 @@ function PostCreateForm() {
                     src={Upload}
                     message="Click or tap to upload an image"
                   />
+
                 </Form.Label>
               )}
 
-              <Form.File 
+              <Form.File
                 id="image-upload"
-                accept="image/"
+                accept="image/*"
                 onChange={handleChangeImage}
                 ref={imageInput}
+                className={appStyles.Hide}
               />
             </Form.Group>
             {errors?.image?.map((message, idx) => (

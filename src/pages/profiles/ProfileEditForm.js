@@ -141,6 +141,7 @@ const ProfileEditForm = () => {
                 id="image-upload"
                 ref={imageFile}
                 accept="image/*"
+                className={appStyles.Hide}
                 onChange={(e) => {
                   if (e.target.files.length) {
                     setProfileData({

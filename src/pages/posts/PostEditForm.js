@@ -68,12 +68,15 @@ function PostEditForm() {
     handleMount();
   }, [history, id]);
 
-  const handleRating = (rating) => {
-    setRating(rating);
+  // Catch Rating value
+  const handleRating = (rate) => {
+    setRating(rate);
   };
-  //   const handleRating = (rate) => {
-  //     setRating(rate / 5);
-  //   };
+
+  // const handleReset = () => {
+  //   // Set the initial value
+  //   setRating(0);
+  // };
 
   const handleChange = (event) => {
     setPostData({
@@ -82,12 +85,6 @@ function PostEditForm() {
     });
   };
 
-//   const handleChangeRating = (event) => {
-//     setRating({
-//       ...postData,
-//       [event.target.name]: event.target.value,
-//     });
-//   };
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
       URL.revokeObjectURL(image);
@@ -212,9 +209,12 @@ function PostEditForm() {
         <Rating
           type="int"
           name="rating"
-          value={rating}
+          initialValue={rating}
           onClick={handleRating}
         />
+        {/* <Rating onClick={handleRating} initialValue={rating} />
+
+        <button onClick={handleReset}>reset</button> */}
         {errors?.rating?.map((message, idx) => (
           <Alert variant="danger" key={idx}>
             {message}
@@ -260,6 +260,7 @@ function PostEditForm() {
                 accept="image/*"
                 onChange={handleChangeImage}
                 ref={imageInput}
+                className={appStyles.Hide}
               />
             </Form.Group>
             {errors?.image?.map((message, idx) => (
