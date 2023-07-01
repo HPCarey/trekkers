@@ -67,10 +67,18 @@ i:hover {
   transition: color ease-in-out 0.3s;
   color: #685375;
 }
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: red;
+}
+
 figure {
   text-align: center;
   display: inline-block;
 }
+
 
 
 /* scrollbar */
