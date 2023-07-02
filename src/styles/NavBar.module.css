@@ -14,3 +14,19 @@
     color: #84BD34;
   }
 
+.SiteName {
+  font-size: 200%;
+  color: #84BD34;
+}
+
+@media (max-width: 995px) {
+  .SiteName {
+    font-size: 160%;
+  }
+}
+
+@media (max-width: 365px) {
+  .SiteName {
+    display: none;
+  }
+}

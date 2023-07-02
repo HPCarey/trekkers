@@ -14,8 +14,6 @@ import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 import { removeTokenTimestamp } from "../utils/utils";
 
-
-
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
@@ -32,17 +30,15 @@ const NavBar = () => {
     }
   };
 
-  const addPostIcon = (
-    <NavLink
-      className={styles.NavLink}
-      activeClassName={styles.Active}
-      to="/posts/create"
-    >
-      <i className="far fa-plus-square"></i>Add post
-    </NavLink>
-  );
   const loggedInIcons = (
     <>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/posts/create"
+      >
+        <i className="far fa-plus-square"></i>Add post
+      </NavLink>
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
@@ -64,7 +60,11 @@ const NavBar = () => {
         className={styles.NavLink}
         to={`/profiles/${currentUser?.profile_id}`}
       >
-        <Avatar src={currentUser?.profile_image} text={currentUser?.username} height={40} />
+        <Avatar
+          src={currentUser?.profile_image}
+          text={currentUser?.username}
+          height={40}
+        />
       </NavLink>
     </>
   );
@@ -100,7 +100,12 @@ const NavBar = () => {
             <img src={logo} alt="logo" height="75" />
           </Navbar.Brand>
         </NavLink>
-        {currentUser && addPostIcon}
+        <NavLink to="/">
+          <Navbar.Brand>
+          <span className={styles.SiteName}>trekkers</span>
+          </Navbar.Brand>
+        </NavLink>
+        
         <Navbar.Toggle
           ref={ref}
           onClick={() => setExpanded(!expanded)}
