@@ -47,9 +47,10 @@ function PostEditForm() {
           country,
           location,
           difficulty,
+          rating,
           is_owner,
         } = data;
-
+  
         is_owner
           ? setPostData({
               title,
@@ -60,11 +61,13 @@ function PostEditForm() {
               difficulty,
             })
           : history.push("/");
+        
+        setRating(rating); // Set the rating state
       } catch (err) {
         // console.log(err);
       }
     };
-
+  
     handleMount();
   }, [history, id]);
 
@@ -209,7 +212,7 @@ function PostEditForm() {
         <Rating
           type="int"
           name="rating"
-          initialValue={rating}
+          value={rating}
           onClick={handleRating}
         />
         {/* <Rating onClick={handleRating} initialValue={rating} />
