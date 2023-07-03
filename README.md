@@ -115,8 +115,8 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
  
 29. Update username and password: As a **user** I can **update my username/password** so that I can **make alterations as needed**
 #
-### **Technologies used** 
-### Languages used
+## **Technologies** 
+### **Languages used**
 - [Python](https://www.python.org/) 
 
 - [HTML](https://www.w3schools.com/html/html_intro.asp)
@@ -125,8 +125,12 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
 
 - [JS](https://reactjs.org/)
 
-### Databases
+### **Databases**
 - [Postgresql](https://www.postgresql.org/)
+
+#### **Cloud storage and deployment services**
+- [Cloudinary](https://cloudinary.com/)
+- [Heroku](https://www.heroku.com/)
 
 ### Frameworks, tools and libraries
 #### Back-End
@@ -139,13 +143,131 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
 - [React JS](https://reactjs.org/)
 - [JSON Web Tokens](https://jwt.io/)
 - [React Bootstrap](https://react-bootstrap-v4.netlify.app/)
+- [react-simple-star-rating](https://www.npmjs.com/package/react-simple-star-rating/v/4.0.5)
 - [React Router](https://v5.reactrouter.com/web/guides/quick-start)
-  
+- [Font Awesome](https://fontawesome.com/)
+- [Canva](https://www.canva.com/)
+- [Favicon.io](https://favicon.io/favicon-converter/)
+- [Schemecolor](https://www.schemecolor.com/)
+- [Pixabay](https://pixabay.com/)
+- [Google fonts](https://fonts.google.com/)
 
-#### Cloud storage and deployment services
-- [Cloudinary](https://cloudinary.com/)
-- [Heroku](https://www.heroku.com/)
 
+#### **Installed packages**
+- React simple star rating: 
+   - npm i react-simple-star-rating@4.0.5
+   - Star rating component as a rating field in the Posts model. 
+- React Router: 
+   - npm install react-router-dom
+   - Handles routing of the React app:
+       - Keeps the UI in sync with the URL and only renders components required by whichever URL path the user navigates to.
+- Axios library:
+   - npm install axios
+   - Tells React app to send requests to the api
+- React Infinite scroll
+
+- jwtDecode library: 
+   - npm install jwt-decode 
+   - Stops unneccessary network requests every time unauthenticated user interacts with the app.
+   - Stores the logged in user's refresh token timestamp in the browser using localStorage.
+   - Then check if this timestamp exists and only if it does make attempt to refresh access token.
+
+
+
+#
+## Gitpod set up and deployment
+- This project was created and developed using gitpod using the following steps: 
+   - Navigate to your github repository page and click the green "new" button to create a new repo.
+   - choose a name with all lower case letters: trekkers
+   - Click the green "create repository" button.
+   - Click the Green "Gitpod button to create a workspace.
+   - Enterthe following commands:
+      - npx create-react-app . --use-npm
+      - npm install -g npm@9.6.6
+   - Run npm start to check the app is working.
+   - Add extension to help manage the code:
+      - ES7 React/Redux/GraphQl/React-Native : (snippets) by dsznajder
+      - Prettier : (Code formatter) by esbenp
+   - Commit  and push to github tr prepare for initial deployment.
+   
+#
+### Initial Deployment
+- Navigate to heroku for initial deployment
+- Click on the "new" dropdown and select "Create new app"
+- Give the app a name and select the region, I selected Europe for this app. 
+- Click the Create app button 
+- Under the "Deploy" tab, click on github for deployment method and connect the app to the [trekkers](https://github.com/HPCarey/trekkers/tree/main) github repositiory.
+- Once the app  is connected to the correct github repository, click "Deploy Branch". and open the app in the browser to make sure it works. 
+
+### Deployment issues and bugs
+- I did not use the CI gitpod template as it was not availabe and the instructions had changed after the codeanywhere switch.
+- As a result I encountered a lot of issues installingpackages and deployment/ app running issues. 
+- A full report of these issues and the solutions I implemented can be seen in the [issues](https://github.com/HPCarey/trekkers/issues) and [Project Board](https://github.com/users/HPCarey/projects/5/views/1).
+
+### Connect the Frontend app with the Backend API
+- In order to connect not only the deployed Frontend app but also the development version of the app, we need to provide both heroku and local urls to the API on heroku.
+- This was done using the following steps: 
+   1. Navigate to the deployed Backend api on heroku and go to the "Settings" tab.
+   2. Set two new Config Vars with the following key:value: 
+      - CLIENT_ORIGIN : https://trekkers.herokuapp.com 
+      - CLIENT_ORIGIN_DEV : https://3000-githubname-appname-435h43j34h543h-eu101.gitpod.io
+       - Note that the CLIENT_ORIGIN_DEV value might need to be updated in the Config Vars as this is not a permanent value and may change during development.
+      - The CLIENT-ORIGIN-DEV in this example is not an actual local url for security reasons. 
+- Next we need to tell the Frontend app where to send requests to.
+- This was done using the Axios library using the following steps: 
+   1. Install the Axios library : npm install axios.
+   2. Create an api folder inside the src folder and inside create an axiosDefaults.js file. 
+   3. Set the baseURL to the deployed api,and set the content type and Credentials.
+
+
+       ![axios](/readme/axios.JPG)
+   4. Import into App.js: 
+   ```
+      import "./api/axiosDefaults";
+   ```
+#
+### Final Deployment
+- In GITPOD IDE:
+   1. Remove React.StrictMode component from index.js.
+   2. Optimise bootstrap imports by making sure each component is imported individually:
+   Example:
+
+      ```
+      import Navbar from "react-bootstrap/Navbar";
+      import Container from "react-bootstrap/Container";
+      import Nav from "react-bootstrap/Nav";
+      ```
+   3. Remove console.logs
+      - note: I am following the advice of the moments walkthrough instructions and have left the console.logs inside the catch blocks commented out fr easy access to debug things later.
+
+   4. Add the Heroku deployment commands in package.json in the "scripts" section.
+   ```
+      "heroku-prebuild": "npm install -g serve",
+   ```
+   Note: Due to some dependency conflicts I have an opesnssl legacy provider tag on the start and build commands in the scripst sectionof package.json. 
+   - This needs to be removed before the deployment commit and push or the heroku deployment build will fail. 
+   - If you want to run this app locally and there is an error, check if the openssl legacy provider tag is there and if not add it according to the below example: 
+   ```
+      "start": "react-scripts --openssl-legacy-provider start",
+      "build": "react-scripts --openssl-legacy-provider build", 
+   ```
+   - If you wish to make changes and deploy, remember to readjust these values before committing:
+   ```
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+   ```
+   Please see the bugs for full details of this issue.
+   5. Add a Procfile to the root of the project with the following command: 
+   ```
+   web: serve -s build
+   ```
+   6. After pushing the final version to GitHub, navigate to the app on heroku.
+        - Under the deploy tab, scroll to the bottom of the page and click the "Deploy Branch" button.
+        - Ensure the build is successful and open the app.
+        - Test all feautures in in the final deployed app to make sure everythin is the same and working as it should. 
+#
+* [Back to top](#)
+#
 ## **Credits**
 ### Code Institute
 
@@ -160,4 +282,4 @@ It contains styles and logic from that project which have bee modified for the p
 ### Bug fixes sources:
 1. Due to a change in material by Code Institute to reflect their new IDE provider, I did not have access to the template for gitpod. As a result I had to deal with a lot of bugs in the setup and deployment stage, and any time a package needed to be installed. The list of sources for this as well as my troubleshooting steps and solutions can be found under the "Frontedn bug" label in [Issues](https://github.com/HPCarey/trekkers/issues).
 
-2.Downgrade React version [Dev.to]( https://dev.to/ifeanyichima/how-to-downgrade-from-react-18-to-1702-818)
+2. Downgrade React version [Dev.to]( https://dev.to/ifeanyichima/how-to-downgrade-from-react-18-to-1702-818)
