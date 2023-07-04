@@ -20,7 +20,7 @@ import { setTokenTimestamp } from "../../utils/utils";
 
 function SignInForm() {
   const setCurrentUser = useSetCurrentUser();
-  useRedirect('loggedIn')
+  useRedirect("loggedIn");
 
   const [signInData, setSignInData] = useState({
     username: "",
@@ -112,7 +112,9 @@ function SignInForm() {
       >
         <Image
           className={`${appStyles.FillerImage}`}
-          src={"https://res.cloudinary.com/dg4yiogei/image/upload/v1684618256/family-hero-big_fblwgu.jpg"}
+          src={
+            "https://res.cloudinary.com/dg4yiogei/image/upload/v1684618256/family-hero-big_fblwgu.jpg"
+          }
         />
       </Col>
     </Row>

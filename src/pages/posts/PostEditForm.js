@@ -12,9 +12,8 @@ import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
-import { useHistory } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 function PostEditForm() {
   const [errors, setErrors] = useState({});
@@ -59,6 +58,7 @@ function PostEditForm() {
               country,
               location,
               difficulty,
+              rating,
             })
           : history.push("/");
         
@@ -75,11 +75,6 @@ function PostEditForm() {
   const handleRating = (rate) => {
     setRating(rate);
   };
-
-  // const handleReset = () => {
-  //   // Set the initial value
-  //   setRating(0);
-  // };
 
   const handleChange = (event) => {
     setPostData({
@@ -215,9 +210,6 @@ function PostEditForm() {
           value={rating}
           onClick={handleRating}
         />
-        {/* <Rating onClick={handleRating} initialValue={rating} />
-
-        <button onClick={handleReset}>reset</button> */}
         {errors?.rating?.map((message, idx) => (
           <Alert variant="danger" key={idx}>
             {message}
