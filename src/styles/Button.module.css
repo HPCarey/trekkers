@@ -46,19 +46,6 @@
     color: #242a3d;
   }
 
-  /* .Blue,
-  .BlueOutline:hover,
-  .Bright:hover {
-    background-color: #2142b2;
-    color: #ffffff;
-  }
-  
-  .BlueOutline,
-  .Blue:hover {
-    background-color: #ffffff;
-    color: #2142b2;
-  }
-   */
   .Black,
   .BlackOutline:hover {
     background-color: #242a3d;
@@ -76,3 +63,7 @@
     background-color: #242a3d;
     color: aliceblue;
   }
+
+  .FollowButton {
+    margin-top: 15px;
+}
