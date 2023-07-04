@@ -9,7 +9,16 @@ import { MoreDropdown } from "../../components/MoreDropdown";
 import CommentEditForm from "./CommentEditForm";
 
 const Comment = (props) => {
-  const { profile_id, profile_image, owner, updated_at, content, id, setPost, setComments } = props;
+  const {
+    profile_id,
+    profile_image,
+    owner,
+    updated_at,
+    content,
+    id,
+    setPost,
+    setComments,
+  } = props;
 
   const [showEditForm, setShowEditForm] = useState(false);
 
@@ -47,12 +56,13 @@ const Comment = (props) => {
           <span className={styles.Date}>{updated_at}</span>
           {showEditForm ? (
             <CommentEditForm
-            id={id}
-            profile_id={profile_id}
-            content={content}
-            profileImage={profile_image}
-            setComments={setComments}
-            setShowEditForm={setShowEditForm} />
+              id={id}
+              profile_id={profile_id}
+              content={content}
+              profileImage={profile_image}
+              setComments={setComments}
+              setShowEditForm={setShowEditForm}
+            />
           ) : (
             <p>{content}</p>
           )}

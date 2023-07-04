@@ -18,7 +18,7 @@ import PopularProfiles from "../profiles/PopularProfiles";
 
 function PostPage() {
   const { id } = useParams();
-  const [post, setPost] = useState({});
+  const [post, setPost] = useState({ results: [] });
   const currentUser = useCurrentUser();
   const profile_image = currentUser?.profile_image;
   const [comments, setComments] = useState({ results: [] });
@@ -30,10 +30,12 @@ function PostPage() {
           axiosReq.get(`/posts/${id}`),
           axiosReq.get(`/comments/?post=${id}`),
         ]);
-        setPost(post);
+        
+        setPost({ results: [post] });
         setComments(comments);
       } catch (err) {
-        // Handle error
+        // console.log(err);
+    
       }
     };
 
@@ -44,7 +46,7 @@ function PostPage() {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
-        <Post {...post} setPosts={setPost} postPage />
+        <Post {...post.results[0]} setPosts={setPost} postPage />
         <Container className={`${appStyles.Content} ${styles.Container}`}>
           {currentUser ? (
             <CommentCreateForm
