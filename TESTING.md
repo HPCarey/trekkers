@@ -212,7 +212,7 @@ The User Stories and features were continuously tested during development and th
 
     - Logged in users have access to the add post form and can create a post about their trail.
 
-    ![add-post-form](readme/desktop-testing/add-post-page.JPG)
+         ![add-post-form](readme/desktop-testing/add-post-page.JPG)
     
     - Each add post form handles errors for blank, required fields and for incorrect field values.
 
@@ -227,6 +227,9 @@ The User Stories and features were continuously tested during development and th
     - Once an image has been uploaded to the form a change image utton will appear to allow user to change the image.
         ![add-post-form](readme/desktop-testing/change-image-button-diff-dropdown.JPG)
     - There is a dropdown menu containing 4 choices of difficulty level with the default value set to easy.
+
+        ![difficulty-dropdown](readme/desktop-testing/difficulty-dropdown.jpg)
+
     - A star rating value is also requires a value of at least 1 out of 5 stars.
 
         ![add-post-form-end](readme/desktop-testing/end-of-add-post-form.JPG)
@@ -275,8 +278,8 @@ The User Stories and features were continuously tested during development and th
     ![loggged-out-home](readme/desktop-testing/logged-out-home.JPG)
 
 
-
 [Back to top](#testing)
+
 16. View post detail: As a **user** I can **view individual post details** so that I can **view other details and comments about the post**
 
     - All users can view the post detail of individual posts.
@@ -288,13 +291,62 @@ The User Stories and features were continuously tested during development and th
 
 [Back to top](#testing)
 
-17.: Like a post: As a **logged in user** I can **like a post** so that I can **quickly show my appreciation for another users content**
+17. Like a post: As a **logged in user** I can **like a post** so that I can **quickly show my appreciation for another users content**
 
-    - All users can view the post detail of individual posts.
-    - All users can view the comments under the post and see how many likes the post has. 
-    - Only logged in users will have the ability to post a comment or like a post.
+   - Logged-in users can like posts via the home page, post detail page or their feed.
+   - Clicking the heart icon will add the post to liked posts and fills in the heart icon with a red color.
+   - The likes count for the post will go up by 1.
+            
+        ![liked-no-results](readme/desktop-testing/liked-no-results.JPG)
+        ![liked-after-liking](readme/desktop-testing/liked-after-liking.JPG)
 
-        ![loggged-out-post-detail](readme/desktop-testing/logged-out-post-detail.JPG)
+- Clicking the heart icon again will remove the post from liked posts and will remove the filled in red colour.
+- The likes count for the post will go down by 1.
+
+    ![unliked-post](readme/desktop-testing/unliked-post.jpeg)
+
+    ![liked-post](readme/desktop-testing/liked-post.jpeg)
+    
+
+- Logged-out users cannot like posts.
+    ![log-in-to-like](readme/desktop-testing/log-in-to-like.png)
+
+- Users cannot like their own posts.
+    ![cant-like-own](readme/desktop-testing/cant-like-your-own.png)
+
+[Back to top](#testing)
+
+
+18. View liked posts: As a **logged in user** I can **view liked posts** so that I can **easily find the posts about trails that interested me**
+
+   - Logged-in users can view their liked posts page to easily find trails they are interested in and want to keep easily accessible by liking.
+            
+        ![liked-after-liking](readme/desktop-testing/liked-after-liking.JPG)
+        ![mobile-liked](readme/desktop-testing/mobile-liked-sm.jpg)
+
+
+[Back to top](#testing)
+
+19. Search posts: As a **user** I can **search posts** so that I can **find a post by author, trail name or location**
+
+   - The search bar allows users to search for posts by keywords including post author, location, country, trail name, difficulty.
+   - It funtcions and displays correclty on all screen sizes, on the homepage, feed and liked page. 
+   
+      ![search-bar](readme/desktop-testing/search-bar.jpg)
+      ![search-bar-mobile](readme/desktop-testing/mobile-popular-profiles.jpg)
+
+   - The search function returns relevant posts as expected according to the user's search words.
+        ![search-location](readme/desktop-testing/search-location.JPG)
+        ![search-difficulty](readme/desktop-testing/search-difficulty.JPG)
+
+
+   - User's can also refine the search by using more than one keyword.
+        ![search-multiple](readme/desktop-testing/search-multiple-key-words.JPG)
+
+   - If the users search keywords don't match any posts an error message is displayed iinforming the user to adjust the search term. 
+            
+        ![no-search-results](readme/desktop-testing/search-no-results.JPG)
+        
 
 
 [Back to top](#testing)
@@ -303,32 +355,135 @@ The User Stories and features were continuously tested during development and th
 
 - - -
 
-### Epic 4: Delete Functionality
+### Epic 4: Comments
 
 <details>
 <summary>User Stories test cases</summary>
 <br>
 
 #### **User Stories**
-1. As a **Site User** I can **cancel appointments** so that **I can delete an appointment from my profile**
+20. Create a comment: As a **user** I can **leave a comment under a post** so that I can **express my opinion and engage with the content and the community**
 
+    - Logged-in users have access to a comment form via the post detail page.
+    - Clicking the comment icon underneath a post will redirect the user straight down to the comments form on the post detail page, but the user can also access it by simply clicking on the post and scrolling down manually.
 
-    - Authorised user can view their appointments in their Appointments page.
-    - Each appointment displays a change and delete button as seen in the previous test case pictures.
-    - There is defensive programming in place to prevent users from accidentally deleting an appointment.
-    - If a user clicks the delete button, they will be redirected to a confirmation page where they will be asked to confirm their delete decision.
+        ![comment-form](readme/desktop-testing/comment-form.JPG)
 
-    ![desktop-form-buttons](static/readme/testing/cancel-confirmation-page.JPG)
-    ![mobile-form-buttons](static/readme/testing/mobile/cancel-confirmation-mobile.jpg)
+    - Once a user types something and clicks post in the comment form, the post detail page will display the newly published comment. 
 
-    - If the user clicks "No Keep it", they will be redirected to the appointments page.
-    - If the user clicks "Yes, cancel it" then:
-        1. The booking instance will be deleted.
-        2. The user will be redirected back to the appointments page.
-        3. A success message will be displayed confriming the cancellation of the appoinment.
-    ![desktop-form-buttons](static/readme/testing/boooking-delete-success.jpg)
+        ![comment-test](readme/desktop-testing/comment-test.JPG)
+        ![comment-test-result](readme/desktop-testing/comment-test-result.JPG)
 
 [Back to top](#testing)
+
+21. Comment date: As a **user** I can **see the comment date** so that I can **know how long a go a comment was left**
+
+    - The amount of time since the comment was first created or last updated is published beside the comment to show users how old the comment is.
+
+        ![old-comment](readme/desktop-testing/old-comment.JPG)
+        ![updated-comment](readme/desktop-testing/updated-comment.JPG)
+
+[Back to top](#testing)
+
+22. View comments: As a **user** I can **view other comments** so that I can **see what others have said**
+
+    - As mentioned in previous test cases, both logged-in and logged-out users can view comments made by other users under the post. 
+
+        ![logged-out-post-detail](readme/desktop-testing/logged-out-post-detail.JPG)
+        ![comment-test-result](readme/desktop-testing/comment-test-result.JPG)
+
+[Back to top](#testing)
+
+23. Edit comments: As a **user** I can **edit my comment** so that I can **revise the information**
+
+    - If the user is the owner of a comment, a three dot dropdown will be displayed in the right hand corner of the published comment.
+    - This dropdown menu contains the icon-link to open the edit comment form. 
+    ![comment-edit icon](readme/desktop-testing/comment-view.JPG)
+    ![edit-comment-form](readme/desktop-testing/edit-comment-form.JPG)
+    - If the user makes a change to the comment and clicks the save button, the post detail page will display the updated comment and updated time. 
+    - If the user clicks cancel, the post detail page will display the original comment.
+
+        ![old-comment](readme/desktop-testing/old-comment.JPG)
+        ![updated-comment](readme/desktop-testing/updated-comment.JPG)
+
+[Back to top](#testing)
+
+24. Delete comments: As a **user** I can **delete my comment** so that I can **remove it from the post**
+
+    - The delete icon is also available to comment owners via the three dot dropdown.
+    - If the user clicks the delete icon, the comment is removed from the post detail page and the comments count goes down by 1. 
+    ![delete-comment](readme/desktop-testing/delet-comment.JPG)
+    ![deleted-comment](readme/desktop-testing/deleted-comment.JPG)
+
+[Back to top](#testing)
+
+
+</details>
+
+- - -
+
+### Epic 5: Profiles
+
+<details>
+<summary>User Stories test cases</summary>
+<br>
+
+#### **User Stories**
+25. Profile page: As a **user** I can **view another user’s profile page** so that I can **see their posts and their bio**
+
+    - Logged-in users have access to a comment form via the post detail page.
+    - Clicking the comment icon underneath a post will redirect the user straight down to the comments form on the post detail page, but the user can also access it by simply clicking on the post and scrolling down manually.
+
+        ![comment-form](readme/desktop-testing/comment-form.JPG)
+
+    - Once a user types something and clicks post in the comment form, the post detail page will display the newly published comment. 
+
+        ![comment-test](readme/desktop-testing/comment-test.JPG)
+        ![comment-test-result](readme/desktop-testing/comment-test-result.JPG)
+
+[Back to top](#testing)
+
+21. Comment date: As a **user** I can **see the comment date** so that I can **know how long a go a comment was left**
+
+    - The amount of time since the comment was first created or last updated is published beside the comment to show users how old the comment is.
+
+        ![old-comment](readme/desktop-testing/old-comment.JPG)
+        ![updated-comment](readme/desktop-testing/updated-comment.JPG)
+
+[Back to top](#testing)
+
+22. View comments: As a **user** I can **view other comments** so that I can **see what others have said**
+
+    - As mentioned in previous test cases, both logged-in and logged-out users can view comments made by other users under the post. 
+
+        ![logged-out-post-detail](readme/desktop-testing/logged-out-post-detail.JPG)
+        ![comment-test-result](readme/desktop-testing/comment-test-result.JPG)
+
+[Back to top](#testing)
+
+23. Edit comments: As a **user** I can **edit my comment** so that I can **revise the information**
+
+    - If the user is the owner of a comment, a three dot dropdown will be displayed in the right hand corner of the published comment.
+    - This dropdown menu contains the icon-link to open the edit comment form. 
+    ![comment-edit icon](readme/desktop-testing/comment-view.JPG)
+    ![edit-comment-form](readme/desktop-testing/edit-comment-form.JPG)
+    - If the user makes a change to the comment and clicks the save button, the post detail page will display the updated comment and updated time. 
+    - If the user clicks cancel, the post detail page will display the original comment.
+
+        ![old-comment](readme/desktop-testing/old-comment.JPG)
+        ![updated-comment](readme/desktop-testing/updated-comment.JPG)
+
+[Back to top](#testing)
+
+24. Delete comments: As a **user** I can **delete my comment** so that I can **remove it from the post**
+
+    - The delete icon is also available to comment owners via the three dot dropdown.
+    - If the user clicks the delete icon, the comment is removed from the post detail page and the comments count goes down by 1. 
+    ![delete-comment](readme/desktop-testing/delet-comment.JPG)
+    ![deleted-comment](readme/desktop-testing/deleted-comment.JPG)
+
+[Back to top](#testing)
+
 
 </details>
 </details>
