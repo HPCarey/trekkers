@@ -431,56 +431,115 @@ The User Stories and features were continuously tested during development and th
 #### **User Stories**
 25. Profile page: As a **user** I can **view another user’s profile page** so that I can **see their posts and their bio**
 
-    - Logged-in users have access to a comment form via the post detail page.
-    - Clicking the comment icon underneath a post will redirect the user straight down to the comments form on the post detail page, but the user can also access it by simply clicking on the post and scrolling down manually.
-
-        ![comment-form](readme/desktop-testing/comment-form.JPG)
-
-    - Once a user types something and clicks post in the comment form, the post detail page will display the newly published comment. 
-
-        ![comment-test](readme/desktop-testing/comment-test.JPG)
-        ![comment-test-result](readme/desktop-testing/comment-test-result.JPG)
+    - Both logged-in and logged-out users have access to other users' profile pages.
+    - Logged-in users will have access to a follow/unfollow button and edit dropdown menu for their own profile. 
+        ![profile-logged-out](readme/desktop-testing/profile-logged-out.JPG)
+        ![profile-logged-in](readme/desktop-testing/profile-logged-in.JPG)
 
 [Back to top](#testing)
 
-21. Comment date: As a **user** I can **see the comment date** so that I can **know how long a go a comment was left**
+26. User stats: As a **user** I can **see stats via a user profile** so that I can **see how many posts/followers/following they have**
 
-    - The amount of time since the comment was first created or last updated is published beside the comment to show users how old the comment is.
+    - The stats on the users profile show how many posts and followers the profile owner has, as well as how many profiles they are following.
+    - The followers count goes up by one if the current user clicks follow.
+    - The followers count goes down by one if the current user clicks unfollow. 
 
-        ![old-comment](readme/desktop-testing/old-comment.JPG)
-        ![updated-comment](readme/desktop-testing/updated-comment.JPG)
+        ![follow-count](readme/desktop-testing/follow-count.JPG)
+        ![unfollow-count](readme/desktop-testing/unfollow-count.JPG)
 
-[Back to top](#testing)
+    - The same applies to the following count if the profile owner follows/unfollows another user, the following count goes up or down in response.
 
-22. View comments: As a **user** I can **view other comments** so that I can **see what others have said**
+        ![following-count](readme/desktop-testing/folloing-count.JPG)
+        ![unfollowing-count](readme/desktop-testing/unfollowing-count.JPG)
 
-    - As mentioned in previous test cases, both logged-in and logged-out users can view comments made by other users under the post. 
+    - Similarly, the posts count goes up when a user adds a post and goes down when apost is deleted.
+    - If the user has not posted anything, there is a message explaining that the profile owner has no posts.
+        
+        ![profile-no-posts](readme/desktop-testing/profile-no-posts.JPG)
+            
+        ![unfollowing-count](readme/desktop-testing/profile-page-with-post.JPG)
 
-        ![logged-out-post-detail](readme/desktop-testing/logged-out-post-detail.JPG)
-        ![comment-test-result](readme/desktop-testing/comment-test-result.JPG)
-
-[Back to top](#testing)
-
-23. Edit comments: As a **user** I can **edit my comment** so that I can **revise the information**
-
-    - If the user is the owner of a comment, a three dot dropdown will be displayed in the right hand corner of the published comment.
-    - This dropdown menu contains the icon-link to open the edit comment form. 
-    ![comment-edit icon](readme/desktop-testing/comment-view.JPG)
-    ![edit-comment-form](readme/desktop-testing/edit-comment-form.JPG)
-    - If the user makes a change to the comment and clicks the save button, the post detail page will display the updated comment and updated time. 
-    - If the user clicks cancel, the post detail page will display the original comment.
-
-        ![old-comment](readme/desktop-testing/old-comment.JPG)
-        ![updated-comment](readme/desktop-testing/updated-comment.JPG)
 
 [Back to top](#testing)
 
-24. Delete comments: As a **user** I can **delete my comment** so that I can **remove it from the post**
+27. Follow/Unfollow a user: As a **logged in user** I can **follow other users whose content is more relevant or meaningful to me** so that I can **view content filtered by the users I follow**
 
-    - The delete icon is also available to comment owners via the three dot dropdown.
-    - If the user clicks the delete icon, the comment is removed from the post detail page and the comments count goes down by 1. 
-    ![delete-comment](readme/desktop-testing/delet-comment.JPG)
-    ![deleted-comment](readme/desktop-testing/deleted-comment.JPG)
+    - As seen above, logged-in users have access to a follow button so that they can follow users whose content they enjoy.
+    -The follow button toggles between follow and unfollow depending on whether the user currently follows the given profile or not. 
+    - The posts of profile owners that the current user follows will be added to their feed, so they can easily see when a user they follow posts new content.
+    - If the current logged-in user doesn't follow any profiles, their feed will display a message suggesting that they follow a profile. 
+
+        ![feed-no-results](readme/desktop-testing/feed-no-results.JPG)
+        
+        ![feed-after-following](readme/desktop-testing/feed-after-following.JPG)
+
+[Back to top](#testing)
+
+28. Edit Profile: As a **user** I can **edit my profile** so that I can **update my personal details**
+
+    - If the current logged-in user is the owner of a profile, a three dot dropdown will be displayed in the Profile header
+    - This dropdown menu contains the icon-links to edit the profile, change the username and change the password. 
+
+        ![edit-profile-dropdown](readme/desktop-testing/edit-profile-dropdown.JPG)
+   
+    - The edit profile link will take the user to an edit profile form.
+
+    - The user can add an avatar image and bio via this form.
+
+    ![edit-profile](readme/desktop-testing/edit-profile-form.JPG)
+
+    - Both the image and bio field are optional, if left blank and the user clicks save they will simply be redirected to the their profile page.
+    - If they enter values for these fields and click save they will be redirected to their profile page which will now display the new image/bio values. 
+    - If the user enters values for these fields and clicks cancel, they will be redirected to the profile page with no changes reflected in the profile.
+
+        ![Filled-profile](readme/desktop-testing/profile-edit-form-filled.JPG)
+
+        ![updated-profile](readme/desktop-testing/profile-no-posts.JPG)
+
+[Back to top](#testing)
+
+29. Update username and password: As a **user** I can **update my username/password** so that I can **make alterations as needed**
+
+    - The three dots dropdown menu "change username" link redirects user to a simple form where they can update their username. 
+
+        ![edit-username](readme/desktop-testing/change-username-form.JPG)
+
+    - If the user clicks save without making any changes, the form throws an error message.
+
+        ![already-username-error](readme/desktop-testing/username-blank.JPG)
+
+    - If the user attempts to use an invalid symbol, a space or more than 150 characters, the form will throw an error message. 
+
+        ![username-error](readme/desktop-testing/change-username-error-too-many-chars.JPG)
+        ![username-more-error](readme/desktop-testing/username-error-message.JPG)
+
+    - If the user clicks cancel, whether or not they have made changes to the username, they will be redirected to their profile with no changes to the username.
+    - If the user makes a valid change to the username and clicks save, they will be rediredted to their profile page where their username will have been updated.
+    - The Profile navlink and popular profiles link will also reflect this change to the username.
+    - The user will now be required to sign in with this new username.
+    
+     ![edited-username](readme/desktop-testing/edited-username.JPG)
+
+    - The three dot dropdown "change password" link redirects user to a simple form where they can update their password. 
+
+     ![password-form](readme/desktop-testing/change-password-form.JPG)
+
+     - If the user inputs passwords that don't match, the form will throw an error.
+
+     ![password-form-error](readme/desktop-testing/edit-password-error.JPG)
+
+     - If the user clicks save and the fields are blank the form will throw the following error: 
+
+     ![password-form-blank](readme/desktop-testing/edit-password-blank-fields.JPG)
+
+     - If the user tries to put a password that is longer than 128 characters, then the form will throw the following error:
+
+     ![password-form-blank](readme/desktop-testing/password-too-many-char-error.JPG)
+
+     - Once the user inputs two valid, matching passwords, they will be redirected to the profile page.
+     - If the new password is the same as the current password, no error will occur, the user will be redirected to their profile page and can continue to use the same password. 
+     - The user will now need to sign in using the new, updated password. 
+
 
 [Back to top](#testing)
 
