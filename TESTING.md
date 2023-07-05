@@ -1,3 +1,13 @@
+# Testing
+* [Back to README Home page](/README.md)
+#
+- [Manual Testing](#manual-testing)
+    - [Responsive Testing](#responsive-testing)
+    - [Lighthouse Testing](#lighthouse-testing)
+    - [Browser Testing](#browser-testing)
+    - [User Stories Testing](#user-stories-testing)
+- [Code Validation](#code-validation)
+
 ## **Manual Testing**
 
 * This site was tested manually by:
@@ -12,16 +22,27 @@
 <details>
 <summary>👇</summary>
 
-* Site resonsivity was tested using google chrome DevTools and with my own Galaxy S20 FE 5G.
-* The screenshot below shows a list of the devices that were tested. 
+* Site resonsivity was tested using google chrome DevTools and with my own Galaxy S20 FE.
+* The screenshot below shows a list of the devices that were tested via chrome devtools:
 
 
-    ![responsive](static/readme/testing/responsive.png)
+    ![responsive](readme/desktop-testing/devtools-responsive-testing.png)
+
+[Back to top](#testing)
 
 * The site was shown to be fully responsive, readable and functional on all of the tested devices.
-* One minor issue showed up with the buttons on the update form page which did not display side by side but rather one above the other on the Surface Pro, iPad mini, iPad Air and the Galaxy fold. This appeared to be a minor issue only affecting UI design and not functionality or readability. On most devices it displayed correctly.
+* The "trekkers" site name navlink in the navbar is set to be hidden in screen sizes under 365px in order to prevent the navbar UI becoming crowded and distorted.
+*  In Chrome devtools most mobile screen sizes are still wide enough to display the "trekkers" heading.
+* The screens where it is hidden are :
+    - Samsung galaxy S8+
+    - Galaxy fold
+* On my own phone model (Galaxy S20 FE), the "trekkers" navlink heading is hidden.
 
 * Site resposivity was also tested on Amiresponsive as seen in the README.
+* Below is a screenshot of the viewport sizes tested on amiresponsive:
+
+ ![amiresponsive](readme/desktop-testing/amiresponsive-viewport-sizes.JPG)
+
 * I also included some screenshots of features in mobile size in the user story testing to show the responsive design. 
 
 [Back to top](#testing)
@@ -61,7 +82,7 @@
 <details>
 <summary>👇</summary>
 
-The User Stories and features were continuously tested during development and this testing was documented here and with screenshots of the features from the deployed site.
+The User Stories and features were continuously tested during development and this testing is documented here with screenshots of the features from the deployed site.
 
 
 ### Epic 1: Authentication
@@ -241,7 +262,7 @@ The User Stories and features were continuously tested during development and th
 
 [Back to top](#testing)
 
-13. Edit a post: As a **logged in user** I can**edit my post** so that I can **revise my content**
+13. Edit a post: As a **logged in user** I can **edit my post** so that I can **revise my content**
 
     - Post owners have the ability to edit their posts from the post detail page via the three dot dropdown menu.
 
@@ -293,33 +314,35 @@ The User Stories and features were continuously tested during development and th
 
 17. Like a post: As a **logged in user** I can **like a post** so that I can **quickly show my appreciation for another users content**
 
-   - Logged-in users can like posts via the home page, post detail page or their feed.
-   - Clicking the heart icon will add the post to liked posts and fills in the heart icon with a red color.
-   - The likes count for the post will go up by 1.
+    - Logged-in users can like posts via the home page, post detail page or their feed.
+
             
         ![liked-no-results](readme/desktop-testing/liked-no-results.JPG)
         ![liked-after-liking](readme/desktop-testing/liked-after-liking.JPG)
 
-- Clicking the heart icon again will remove the post from liked posts and will remove the filled in red colour.
-- The likes count for the post will go down by 1.
+    - Clicking the heart icon will add the post to liked posts and fills in the heart icon with a red color.
+    - The likes count for the post will go up by 1.
+    - Clicking the heart icon again will remove the post from liked posts and will remove the filled in red colour.
+    - The likes count for the post will go down by 1.
 
-    ![unliked-post](readme/desktop-testing/unliked-post.jpeg)
+        ![unliked-post](readme/desktop-testing/unliked-post.jpeg)
 
-    ![liked-post](readme/desktop-testing/liked-post.jpeg)
+        ![liked-post](readme/desktop-testing/liked-post.jpeg)
     
 
-- Logged-out users cannot like posts.
+    - Logged-out users cannot like posts.
     ![log-in-to-like](readme/desktop-testing/log-in-to-like.png)
 
-- Users cannot like their own posts.
-    ![cant-like-own](readme/desktop-testing/cant-like-your-own.png)
+    - Users cannot like their own posts.
+
+         ![cant-like-own](readme/desktop-testing/cant-like-your-own.png)
 
 [Back to top](#testing)
 
 
 18. View liked posts: As a **logged in user** I can **view liked posts** so that I can **easily find the posts about trails that interested me**
 
-   - Logged-in users can view their liked posts page to easily find trails they are interested in and want to keep easily accessible by liking.
+    - Logged-in users can view their liked posts page to easily find trails they are interested in and want to keep easily accessible by liking.
             
         ![liked-after-liking](readme/desktop-testing/liked-after-liking.JPG)
         ![mobile-liked](readme/desktop-testing/mobile-liked-sm.jpg)
@@ -329,21 +352,22 @@ The User Stories and features were continuously tested during development and th
 
 19. Search posts: As a **user** I can **search posts** so that I can **find a post by author, trail name or location**
 
-   - The search bar allows users to search for posts by keywords including post author, location, country, trail name, difficulty.
-   - It funtcions and displays correclty on all screen sizes, on the homepage, feed and liked page. 
+    - The search bar allows users to search for posts by keywords including post author, location, country, trail name, difficulty.
+    - It funtcions and displays correclty on all screen sizes, on the homepage, feed and liked page. 
    
       ![search-bar](readme/desktop-testing/search-bar.jpg)
       ![search-bar-mobile](readme/desktop-testing/mobile-popular-profiles.jpg)
 
-   - The search function returns relevant posts as expected according to the user's search words.
+     - The search function returns relevant posts as expected according to the user's search words.
         ![search-location](readme/desktop-testing/search-location.JPG)
         ![search-difficulty](readme/desktop-testing/search-difficulty.JPG)
 
 
-   - User's can also refine the search by using more than one keyword.
+     - User's can also refine the search by using more than one keyword.
+
         ![search-multiple](readme/desktop-testing/search-multiple-key-words.JPG)
 
-   - If the users search keywords don't match any posts an error message is displayed iinforming the user to adjust the search term. 
+    - If the users search keywords don't match any posts an error message is displayed iinforming the user to adjust the search term. 
             
         ![no-search-results](readme/desktop-testing/search-no-results.JPG)
         
@@ -545,80 +569,6 @@ The User Stories and features were continuously tested during development and th
 
 
 </details>
-</details>
-
-- - -
-
-## Features Testing
-
-<details>
-<summary>👇</summary>
-
-The features were manually tested during the development of this project and also after it was finished with the below user acceptance testing:
-
-
-| Page | User Action | Expected Result| Notes |
-| --- | --- | --- | --- |
-|  **Home Page**   | |  | |
-| All users | Click on Logo | Redirect to Landing page | Pass |
-| All users | Click on Home Navlink | Redirect to Landing page | Pass |
-| Logged-out users | Click on Book an Appointment Navlink | Redirect to Sign In Page | Pass |
-| Logged-out users | Click on Book Now! button | Redirect to Sign In Page | Pass |
-| Logged-out users| Click on Login Navlink  | Redirection to Sign In page | Pass |
-| Logged-out users| Click on Sign Up link on Sign in page | Redirect to Sign Up page | Pass |
-| Logged-out users| Click on Account button | Redirect to Sign In page | Pass |
-| Logged-in users | Click on Book an Appointment Navlink | Redirect to booking form | Pass |
-| Logged-in users | Click on Book Now! button | Redirect to booking form | Pass |
-| Logged-in users| Click on Logout Navlink  | Redirect to Sign Out page | Pass |
-| Logged-in users| Click on Appointments in nav dropdown | Redirect to Appoinments page | Pass |
-| Logged-in users| Click on Logout in nav dropdown | Redirect to Sign Out page | Pass |
-| **Sign Up Page** |  |  |  |
-| | Enter valid username | Field will not accept duplicate usernames | Pass |
-| *optional field | Enter valid email address | Field will only accept email address format | Pass |
-| | Enter valid password (twice) | Field will only accept identical passwords | Pass |
-| | Click Sign Up button on sign up page  | Redirect to home and displays success message | Pass |
-| | Click on Sign In link | Redirect to Sign In page | Pass |
-| **Sign In Page** |  |  |  |
-| | Enter valid username | Field will only accept valid username | Pass |
-| | Enter valid password | Field will only accept valid password  | Pass |
-| | Click Sign In button | Redirects home and displays success message | Pass |
-| | Click on Sign Up link | Redirect to Sign Up page | Pass |
-| **Sign Out Page** |  |  |  |
-| | Click to confirm to sign out  | Redirect to landing page and display success message confirming sign out | Pass |
-| **Booking Form Page** |  |  |  |
-| | Click submit for an empty form | No redirect and display django empty field error for first form field | Pass |
-| | Click submit with any empty field | No redirect and display django empty field error for the specific form field| Pass |
-| | Select a date that has already been booked | No redirect and display duplicate booking error| Pass |
-| | Select a date in the past| No redirect and display cannot book past date error | Pass |
-| | Select an age below 18| No redirect and display must be over 18 error | Pass |
-| | Select an age over 90| No redirect and display must be under 90 error | Pass |
-| | Click Submit | If form is valid, redirect to appointments page and display success message | Pass |
-| | Click Cancel | Redirect to appointments page without saving appointment data | Pass |
-| **Edit Form Page** |  |  |  |
-| | Click submit with any empty field | No redirect and display django empty field error for the specific form field| Pass |
-| | Select a date that has already been booked | No redirect and display duplicate booking error| Pass |
-| | Select a date in the past| No redirect and display cannot book past date error | Pass |
-| | Click Submit Changes button | If form is valid, redirect to appointments page and display success message | Pass |
-| | Click Don't Change button | Redirect to appointments page without updating appointment data | Pass |
-| **Appointments Page** | | | | 
-| New User | Click Book an Appointment button | Redirect to booking form page | Pass |
-| Returning User | View Appointments | User can view all their previously booked appointments | Pass |
-| Returning User | Click Change | Redirect to prepopulated edit form of the specific boooking | Pass |
-| Returning User | Click Cancel | Redirect to cancel appointment confirmation page | Pass |
-| **Cancel Confirmation Page** | | | | 
-|  | Click "No, Keep it" button| Redirect to Appointment Page | Pass |
-|  | Click "Yes, Cancel it" button | Redirect to Appointment Page and display cancel success message | Pass |
-|**Footer** | | | | 
-| | Click on Social Media Icon | Opens social media site in a new window | Pass |
-|**Defensive Programming** | | | | 
-| Logged out-user| Type the urls for appointments page, or forms direclty into the browser | Redirect to sign-in page | Pass |
-| All users| Type an unknown url path into the browser | Redirect to custom 404 page | Pass |
-| All users| On the custom 404 page, click the logo | Redirect to home page| Pass |
-| Logged in-user| Click Delete button on appoinments | Redirect confirmation page before deleting | Pass |
-| Logged in-user| Click Logout navlinks | Redirect confirmation page before logging out| Pass |
-
-[Back to top](#testing)
-
 </details>
 
 - - -

@@ -1,13 +1,59 @@
 # Trekkers
 
 Trekkers is a social media platform for hikers and people who love the outdoors. It was created using React and Django Rest Frameowork. The purpose of the site is to allow users to share posts about trails they like in their local area or hiking trips they've taken. 
+
 #
+![password-form-blank](readme/amiresponsive.JPG)
 * [Deployed Front-End page](https://trekkers.herokuapp.com/)
 * [Deployed Back-End page](https://pp5-trekkers-api.herokuapp.com/)
 * [Backend repository](https://github.com/HPCarey/pp5-trekkers-api)
 
 #
-### Agile Planning
+- [**Agile Planning**](#agile-planning)
+	- [**GitHub Project Board**](#github-project-board)
+	- [**Github Issues**](#github-issues)
+	- [**Wireframes**](#wireframes)
+	- [**List of Wireframe pages**](#list-of-wireframe-pages)
+- [**Epics**](#epics)
+	- [Authentication](#authentication)
+	- [Navigation](#navigation)
+	- [Posts](#posts)
+	- [Comments](#comments)
+	- [Profiles](#profiles)
+- [**User Stories**](#user-stories)
+	- [**Epic 1: Authentication**](#epic-1-authentication)
+	- [**Epic 2: Navigation:**](#epic-2-navigation)
+	- [**Epic 3: Posts**](#epic-3-posts)
+	- [**Epic 4: Comments**](#epic-4-comments)
+	- [**Epic 5: Profiles**](#epic-5-profiles)
+- [**Technologies**](#technologies)
+	- [**Languages used**](#languages-used)
+	- [**Databases**](#databases)
+		- [**Cloud storage and deployment services**](#cloud-storage-and-deployment-services)
+	- [Frameworks, tools and libraries](#frameworks-tools-and-libraries)
+		- [Back-End](#back-end)
+		- [Front-End](#front-end)
+		- [**Installed packages**](#installed-packages)
+- [Testing](#testing)
+   - [Manual Testing](/TESTING.md#manual-testing)
+      - [Responsive Testing](/TESTING.md#responsive-testing)
+      - [Lighthouse Testing](/TESTING.md#lighthouse-testing)
+      - [Browser Testing](/TESTING.md#browser-testing)
+      - [User Stories Testing](/TESTING.md#user-stories-testing)
+      - [Features Testing](/TESTING.md#features-testing)
+        
+    - [Code Validation](/TESTING.md#code-validation)
+- [Gitpod set up and deployment](#gitpod-set-up-and-deployment)
+	- [Initial Deployment](#initial-deployment)
+	- [Deployment issues and bugs](#deployment-issues-and-bugs)
+	- [Connect the Frontend app with the Backend API](#connect-the-frontend-app-with-the-backend-api)
+	- [Final Deployment](#final-deployment)
+- [**Credits**](#credits)
+	- [Code Institute](#code-institute)
+	- [Resources for creating the star rating component:](#resources-for-creating-the-star-rating-component)
+	- [Bug fixes sources:](#bug-fixes-sources)
+#
+### **Agile Planning**
 #### **GitHub Project Board**
 
 This project was devised using agile methodologies.
@@ -16,7 +62,7 @@ Epics, user stories, bugs and issues are recorded on the [Project Board](https:/
 ![Screenshot of project board](/readme/kanban-board.png)
 
 #### **Github Issues**
-Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project issues and labels. 
+Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issues and labels. 
 * A list of Frontend Bugs can be viewed via the Frontend Bug label. 
 * A list of backend bugs can be viewed via the Backend bug label.
 * A list of all bugs can be viewed via the bugs label.
@@ -33,13 +79,16 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
 - [Sign in page](readme/sign_in_page.png)
 - [Creat post form](readme/create_post_form.png)
 - [Profile page](readme/profile_page.png)
+
+[Back to top](#)
 #
 ### **Epics**
-#### Authentication
-#### Navigation
-#### Posts
-#### Comments
-#### Profiles
+#### [Authentication](#epic-1-authentication)
+#### [Navigation](#epic-2-navigation)
+#### [Posts](#epic-3-posts)
+#### [Comments](#epic-4-comments)
+#### [Profiles](#epic-5-profiles)
+
 
 ### **User Stories**
 
@@ -57,6 +106,7 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
 
 6. Create superuser: As a **site owner** I can **create a superuser** so that **I can give admin users access to the admin panel**.
 
+[Back to top](#)
 #### **Epic 2: Navigation:**
 
 7. As a **user** I can **quickly view my logged in/out status in the navbar** so that I can **decide on my next action**
@@ -70,6 +120,8 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
 
 11. Popular profiles list: As a **logged in user** I can **view other user’s profile names and avatars” so that I can **easily identify and follow other users”
 
+[Back to top](#)
+
 #### **Epic 3: Posts**
 12. Create a post: As a **logged in user** I can **create a new post** so that I can **share my experiences and suggestions for good hikes and walks I’ve been on**.
 
@@ -82,13 +134,13 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
 16. View post detail: As a **user** I can **view individual post details** so that I can ** view other details and comments about the post**
  
 
-17.: Like a post: As a **logged in user** I can **like a post** so that I can **quickly show my appreciation for another users content**
+17. Like a post: As a **logged in user** I can **like a post** so that I can **quickly show my appreciation for another users content**
 
 18. View liked posts: As a **logged in user** I can **view liked posts** so that I can **easily find the posts about trails that interested me**
 
 19. Search posts: As a **user** I can **search posts** so that I can **find a post by author, trail name or location**
 
-
+[Back to top](#)
 #### **Epic 4: Comments**
 20. Create a comment: As a **user** I can **leave a comment under a post** so that I can **express my opinion and engage with the content and the community**
 
@@ -100,7 +152,7 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
 
 24. Delete comments: As a **user** I can **delete my comment** so that I can **remove it from the post**
  
-
+[Back to top](#)
 #### **Epic 5: Profiles**
 25. Profile page: As a **user** I can **view another user’s profile page** so that I can **see their posts and their bio**
  
@@ -114,6 +166,8 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
 28. Edit Profile: As a **user** I can **edit my profile** so that I can **update my personal details**
  
 29. Update username and password: As a **user** I can **update my username/password** so that I can **make alterations as needed**
+
+[Back to top](#)
 #
 ## **Technologies** 
 ### **Languages used**
@@ -128,11 +182,11 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
 ### **Databases**
 - [Postgresql](https://www.postgresql.org/)
 
-#### **Cloud storage and deployment services**
+### **Cloud storage and deployment services**
 - [Cloudinary](https://cloudinary.com/)
 - [Heroku](https://www.heroku.com/)
 
-### Frameworks, tools and libraries
+### **Frameworks, tools and libraries**
 #### Back-End
 - [Django Rest Framework](https://www.django-rest-framework.org/)
 - [Psycopg2](https://pypi.org/project/psycopg2/)
@@ -151,6 +205,7 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
 - [Schemecolor](https://www.schemecolor.com/)
 - [Pixabay](https://pixabay.com/)
 - [Google fonts](https://fonts.google.com/)
+- [Markdown TOC generator](https://magnetikonline.github.io/markdown-toc-generate/)
 
 
 #### **Installed packages**
@@ -172,9 +227,90 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
    - Stores the logged in user's refresh token timestamp in the browser using localStorage.
    - Then check if this timestamp exists and only if it does make attempt to refresh access token.
 
-
+[Back to top](#)
 
 #
+
+## **Testing**
+The testing documentation can be viewed [here](/TESTING.md)
+
+[Back to top](#contents)
+#
+
+## **Bugs**
+### **Bugs encountered during development**
+* I have recorded the primary bugs and issues encountered during the development process in the issues and [Project Board](https://github.com/users/HPCarey/projects/5/views/1).
+* The solutions and sources to the bugs encountered can also be found there.
+
+Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issues and labels. 
+* A list of Frontend Bugs can be viewed via the Frontend Bug label. 
+* A list of backend bugs can be viewed via the Backend bug label.
+* A list of all bugs can be viewed via the bugs label.
+
+[Back to top](#)
+### **Bugs and issues encountered during testing**
+* The bugs encountered during the manual test phase were as follows: 
+1.	Follow/unfollow buttons on the profile pages needed a top margin so a class was made in the button styles module just to target these. 
+2. Comment form submit/update error:
+   -  After user created or edited a comment and clicked "post" or "save", the post detail page would display a blank white page. 
+   - Upon refreshing the page the comment had been correctly created/updated but every time the button was clicked to perform these actions the post detail page would go blank.  
+
+   **Fix**: 
+   - After investigating routes and comment forms, I located the problem in the  PostPage.js, so the problem was with the post detail code not the comment form. 
+   - I was able to locate the issue by refering back through my original wlakthrough project code for this component.
+   - The variable "post" was missing the property "results" in the usestate hook.
+   - It was set to:
+   ```
+    const [post, setPost] = useState({});
+   ```
+   - I think I may have adjusted this while trying to troubleshoot another issue, so I changed it back to:
+   ```
+     const [post, setPost] = useState({ results: [] });
+   ```  
+   - I also had to set the array to "post" in the useEffect hook:
+   ```
+    setPost({ results: [post] });
+   ``` 
+   - And add results array to the Post component: 
+   ```
+   <Post {...post.results[0]} setPosts={setPost} postPage />
+   ```
+This fixed the comment form post request error.
+
+[Back to top](#)
+
+### **Unresolved bugs** 
+1. The star rating component bug for the edit form: 
+   - This bug is recorded in the project board as it appeared during development.
+   - It was partly resolved but not completely.
+   - Initially the value of the orginial posts rating was not being passed to the edit form at all
+   - The user had to input a star rating value every time they wanted to edit the post, even if they wanted to edit a different field and keep the star rating the same. 
+   - Without a new value for rating the edit form would not be validated and would throw a missing required field error.
+   - The stars were not filled in to display the pre-populated value to the user.
+      
+   **Fix**:
+   - I managed to pass the value of the original post rating to the edit form so that it didn't need to be updated for the form to be validated.
+   - I also tested that the rating value would remain the same as the original post if not updated by the user in the edit form and it passed.
+   - I checked that the value would be updated to a new value if the user input a new star rating and it passed.
+   - I thought this would resolve the issue completely but I could not manage to get the stars to display the filled in value of the rating. 
+   - After trying a lot of different things and refering back to the component documentation, I had to leave this issue partly unresolved.
+   - It would be preferable for the user to see the star rating original value in the edit form, but at least this value is being passed and can be updated or left as is without interfering with the form validation.
+#
+2. Sticky follow/unfollow buttons:
+
+   - During the manual testing phase I discovered that sometimes the follow-unfollow button for certain profiles got "sticky".
+   - Certain profiles follow buttons did not always allow me to toggle between follwo-unfollow many times before getting stuck, while other profiles seemed to always allow this. 
+
+   **Fix**:
+      - After doing a code review and using an eslinter to clean up some code and removing typos and commented out code, I found that the sticky follow button issue had resolved for all but one profile.
+      - The profile "testUser123" does not always work when I click it. It does not toggle between follow/unfollow and the followers count does not change. 
+      - This profile was not created by me but either by my mentor or by an assessor from the previous submission. 
+      - I'm not sure why only this one profile is affected but the other profile follow buttons are beaving as expected and I have had to leave the problematic one unresolved for now.
+
+[Back to top](#)
+
+#
+
 ## Gitpod set up and deployment
 - This project was created and developed using gitpod using the following steps: 
    - Navigate to your github repository page and click the green "new" button to create a new repo.
@@ -189,7 +325,8 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
       - ES7 React/Redux/GraphQl/React-Native : (snippets) by dsznajder
       - Prettier : (Code formatter) by esbenp
    - Commit  and push to github tr prepare for initial deployment.
-   
+
+[Back to top](#)
 #
 ### Initial Deployment
 - Navigate to heroku for initial deployment
@@ -225,6 +362,8 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
    ```
       import "./api/axiosDefaults";
    ```
+
+[Back to top](#)
 #
 ### Final Deployment
 - In GITPOD IDE:
@@ -266,7 +405,7 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues)  to the project iss
         - Ensure the build is successful and open the app.
         - Test all feautures in in the final deployed app to make sure everythin is the same and working as it should. 
 #
-* [Back to top](#)
+[Back to top](#)
 #
 ## **Credits**
 ### Code Institute
@@ -283,3 +422,6 @@ It contains styles and logic from that project which have bee modified for the p
 1. Due to a change in material by Code Institute to reflect their new IDE provider, I did not have access to the template for gitpod. As a result I had to deal with a lot of bugs in the setup and deployment stage, and any time a package needed to be installed. The list of sources for this as well as my troubleshooting steps and solutions can be found under the "Frontedn bug" label in [Issues](https://github.com/HPCarey/trekkers/issues).
 
 2. Downgrade React version [Dev.to]( https://dev.to/ifeanyichima/how-to-downgrade-from-react-18-to-1702-818)
+
+[Back to top](#)
+
