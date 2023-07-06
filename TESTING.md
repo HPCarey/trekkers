@@ -670,85 +670,51 @@ Below are the issues encountered during initial validation:
 #
 
 2. ### CSS Validation
-CSS Validation was done using [Jigsaw](https://jigsaw.w3.org/css-validator/)
+CSS Validation was done using [Jigsaw](https://jigsaw.w3.org/css-validator)
 
-* One error occured for the .btn-secodary class. Too many values. 
-* I am not 100% sure, but I think perhaps this error occured becasue I had already targeted the buttons with these rules somewhere else already.
+* One error occured for a padding value without a unit which was a typo in the app.module.css file .Content class.
 
-![CSS](static/readme/testing/code-validation/css-validator-error.JPG)
+![CSS-error](readme/desktop-testing/css-padding-error.JPG)
 
-* After playing around with this css for a bit I realised that the particular rule was not really making a differnece to the display and after commenting it out to be sure I decide to delete it.
-* After double checking all my styles were working ok, I ran the css through the validator again and it came up clean.
+* Once this error was fixed I got the no error result but there were some warnings that I had to look into
 
-![CSS_no_error](static/readme/testing/code-validation/css-validator-fixed.JPG)
+![CSS-error](readme/desktop-testing/css-vlaidation.JPG)
+![CSS-error](readme/desktop-testing/css-warnings.JPG)
+
+* The vendor extended pseudo element warning can be ignored as it is simply an extension not supported by w3c standard css and can be ignored as it's not a code error: [source](https://stackoverflow.com/questions/21889767/warnings-from-w3c-validation-for-css-cant-find-the-warning-message-for-vendor).
+
+* The property clip is deprecated warning I investigated using these sources: 
+
+    - [clip](https://www.w3schools.com/cssref/pr_pos_clip.php#:~:text=The%20rectangle%20is%20specified%20as,path%20property%20in%20the%20future.)
+
+    - [clip-path](https://www.w3schools.com/cssref/css3_pr_clip-path.php)
+
+* I initiallt tried to simply swap clip for clip path but rect was not useable with clipath. 
+* I reviewed sources to hide an element without using clip.
+* This [source](https://stackoverflow.com/questions/6746649/how-can-i-hide-an-element-off-the-edge-of-the-screen#:~:text=Just%20add%20overflow%3Ahidden%20to,That%20should%20do%20the%20trick.) contained a suggestion that the only necessary property was an absolute or fixed position and overflow:hidden[]().
+* I discovered in my case that the element I was attempting to hide with this class required at least some other size properties so but would be hidden without using clip property.
+
+- The final W3C validation results were no errors and 4 ignorable warnings related to the webkit scrollbar extension.
+
+![CSS-error](readme/desktop-testing/css-final-results.JPG)
+![CSS-error](readme/desktop-testing/css-vlaidation.JPG)
 
 [Back to top](#testing)
 
 #
 
-3. ### Python Validation
- Python Validation was done using the [CI Python Linter](https://pep8ci.herokuapp.com/).
- I used the gitpod problems tab to minimise python code errors as I went along, so there were not that many errors to address from passing the code through the linter. 
+3. ### JSX Validation
+- Most of the code validation was done through the gitpod ide problems tab and with the help of the prettier code formatting extension.
+- For good measure, I ran the jsx files through this [eslint](https://eslint.org/play/). 
+- These are the settings I used for this validator so as not to get unrelated javascript errors as a result of the html tags in jsx. 
+ ![settings](readme/desktop-testing/eslinter-setup.JPG)
 
-#### **Profject files**
-
-**settings.py**
-* Initial warnings for this file were as seen in this screenshot:
-
-    ![settings-warning](static/readme/testing/python-code-validation/settings_warnings.JPG)
-
-* The settings.py line too long warnings are from the django password validators. 
-    ![settings-warning](static/readme/testing/python-code-validation/auth-password-validators.JPG)
-
-* After consulting my own mentor and other mentors on slack, I left the too long lines in this particular case as they are part of the django automated code and splitting the string up might lead to unforseen issues. 
-* The final validation results look like this:
-
-    ![settings-warning](static/readme/testing/python-code-validation/settins_final.JPG)
+- It was not an ideal way to validate due to the fact that it is bound to throw unused variable/undefined variable errors because of the nature of importing/exporting components and variables between the different files. 
+- I ignored the above error types and checked for syntax errors, and found the code to be clean. 
+ ![parsing](readme/desktop-testing/eslint-validator-errors.JPG)
 
 [Back to top](#testing)
 
-**urls.py**
-* No errors found
-
-    ![settings-warning](static/readme/testing/python-code-validation/urls-main.JPG)
-
-[Back to top](#testing)
-#### **Booking app files**
-
-**admin.py**
-* No errors found
-
-    ![settings-warning](static/readme/testing/python-code-validation/adming-no-errors.JPG)
-
-[Back to top](#testing)
-
-**forms.py**
-* No errors found
-
-    ![settings-warning](static/readme/testing/python-code-validation/forms_results.JPG)
-
-[Back to top](#testing)
-
-**models.py**
-* No errors found
-
-    ![settings-warning](static/readme/testing/python-code-validation/models_results.JPG)
-
-[Back to top](#testing)
-
-**urls.py**
-* No errors found
-
-    ![settings-warning](static/readme/testing/python-code-validation/app_urls.JPG)
-
-[Back to top](#testing)
-
-**views.py**
-* No errors found
-
-    ![settings-warning](static/readme/testing/python-code-validation/views_results.JPG)
-
-[Back to top](#testing)
 
 
 </details>

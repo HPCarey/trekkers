@@ -423,5 +423,12 @@ It contains styles and logic from that project which have bee modified for the p
 
 2. Downgrade React version [Dev.to]( https://dev.to/ifeanyichima/how-to-downgrade-from-react-18-to-1702-818)
 
+3. Css validator warning explanations from TESTING.md:
+   1. [vendor extended pseudo-element warning source](https://stackoverflow.com/questions/21889767/warnings-from-w3c-validation-for-css-cant-find-the-warning-message-for-vendor)
+   2. [The property clip is deprecated warning source]()
+
+4. Hide "choose file" button for images off screen with css .Hide class [source](https://stackoverflow.com/questions/6746649/how-can-i-hide-an-element-off-the-edge-of-the-screen#:~:text=Just%20add%20overflow%3Ahidden%20to,That%20should%20do%20the%20trick.).
+
+
 [Back to top](#)
 
