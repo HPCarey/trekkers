@@ -52,14 +52,46 @@ Trekkers is a social media platform for hikers and people who love the outdoors.
 	- [Code Institute](#code-institute)
 	- [Resources for creating the star rating component:](#resources-for-creating-the-star-rating-component)
 	- [Bug fixes sources:](#bug-fixes-sources)
+
+## **PLanning and Project Conception**
+### **Project Goals**
+- The aim of this project was to build a Frontend application using React and to become familiar with developing  applications using component based architecture.
+- This project was built with the use of resuable react-bootstrap components such as the navbar component, dropdown menu, card, media etc. 
+- As well as reusability, React allows for faster rendering and imporved performance by using a virtual DOM that only updates and renders the necessary components of the UI when the user interacts with the site.
+- Another aim of this porject is to connect a frontend app to a backen api.
+- Django Rest Framework was used to create RESTful APIs for the Frontend app.
+- In the drf api, django models are converted into JSON by defining serialisers.
+- These models are the architecture for the custom components for the frontend app such as the Post component. 
+- Authentication, permissions and url routing is configured to manage api access in the backend.
+- The React Frontend app is using axios to make http requests to the api endpoints.
+- ReactRouter is implemented for UI-end routing to allow users to navigate between site pages.
+- To see how to connect the Frontend App and the Backend Api, please see [this](#connect-the-frontend-app-with-the-backend-api) part of the deployment section.
+- To  review the drf Backend api endpoints and methods, please see the [backend repo](https://github.com/HPCarey/pp5-trekkers-api).
+[Back to top](#)
+
+### **Site Goals**
+- To build an online community around a common interest of being outdoors, walking and hiking.
+- To allow community members to share picture and information regarding trails and hikes they've done
+- To allow commnunity members to follow other users whose content is interesting to them.
+- To allow users to save posts that are interesting to them about trail they would like to do. 
+
+### **Future Goals**
+- To implement event features so that community members can use the site to organise hikes and walks in their local areas or arrange hiking holidays/trips.
+- To make the current features more useful by providing google maps locations and directions.
+- Allow users to interact more efficiently by implementing private messaging.
+
+[Back to top](#)
 #
-### **Agile Planning**
+
+ 
 #### **GitHub Project Board**
 
 This project was devised using agile methodologies.
 Epics, user stories, bugs and issues are recorded on the [Project Board](https://github.com/users/HPCarey/projects/5/views/1).
 
 ![Screenshot of project board](/readme/kanban-board.png)
+
+[Back to top](#)
 
 #### **Github Issues**
 Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issues and labels. 
@@ -167,6 +199,58 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
  
 29. Update username and password: As a **user** I can **update my username/password** so that I can **make alterations as needed**
 
+### **Design**
+
+#### **Images**
+ 
+* Images of trails I used to populate the site were all taken from free photo stock on [Pixabay](https://www.pixabay.com/)
+
+#### **Colour Scheme and Accessibility**
+ * I designed the color scheme around the logo which I used canva to color. I wanted to go with foresty green color palette. 
+
+ * I got the colors for the backgrounds from these color palettes on [Schemecolor](https://www.schemecolor.com/)
+ [Pallete 1](https://www.schemecolor.com/forest-tones.php)
+[Pallette 2](https://www.schemecolor.com/forest-tones.php)
+
+#### **Typography**
+* I also used canva to decide on the typography along with the design for the logo.
+* I went with Quicksand font which I thought was very minamalist but soft due to the rounded edges. 
+
+
+## **Features**
+### **Existing Features**
+* For a comprehensive list of all site features, their function and UI design, please refer to the [User Stories Testing](/TESTING.md#user-stories-testing) section of the [TESTING.md](/TESTING.md) document. 
+
+### **logo**
+* Logo was designed by this artist [ItalianLadyBug](https://pixabay.com/users/italianladybug-27190605/).
+* [This](https://pixabay.com/illustrations/hiking-mountain-adventure-travel-7459908/) is the source for the design I found on pixabay.
+* I used [Canva](https://www.canva.com/) to adjust the color to my linking and add the site name.
+* Used as the favicon for the webpage as well as the navbar logo home link.
+![logo](readme/large-logo.png)
+
+[Back to top](#contents)
+#
+
+### **custom 404 page**
+* The 404 page let's user's know they are still connected to the site but on a non-existent page. 
+
+![404](readme/404.JPG)
+
+[Back to top](#)
+#
+### **Future Features**
+* An Events Feature similar to the Posts feature, whereby users can post about trail meetups and hikes in their local area so users can use the site to arrange real world meetups.
+   * The plans for this feature have already been designed in the wireframes and erd model plans.
+   * In the [home page](readme/home_page.png) wireframe, the navbar has been designed to have an events page link and a dropdown nav menu for the add post and add event form links. 
+   * Here are the event feature wireframes I designed for this: 
+      - [Event Page](readme/event_page.png)
+      - [Create Event Form](readme/create_event_form.png) 
+   * This future feature could still have a comment component similar to posts, but instead of a like button there would be an "interested in" and a "going" button. These would work as a toggle button much in the same way the like button and follow buttons function.
+   * For events with limited capacity there could be a "going to" max value limit that prevents users from clicking id the event has reached capacity.
+   * Google map api integration would be good for this too so that people can easily plan  their trips to the trail locations.
+* Private messaging would be a good feature for a site like this, especially once event organisation becomes a feature.
+* Social Account sign in using apis to allow users to login via their email accounts rather than going through the whole sign up process.
+
 [Back to top](#)
 #
 ## **Technologies** 
@@ -192,6 +276,7 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
 - [Psycopg2](https://pypi.org/project/psycopg2/)
    - PostgreSQL database adapter for python
 - [JSON Web Tokens](https://jwt.io/)
+   - Manage account authorisation, keep user logged-in for 24 hours.
    
 #### Front-End
 - [React JS](https://reactjs.org/)
@@ -208,7 +293,13 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
 - [Markdown TOC generator](https://magnetikonline.github.io/markdown-toc-generate/)
 
 
-#### **Installed packages**
+#### **Installed packages, libraries and componenets**
+#### **Front-End**
+-React
+   - npx create-react-app . --use-npm
+   - Main JavaScript framework for creating the UI
+- Node 
+   - Package manager used to install dependencies
 - React simple star rating: 
    - npm i react-simple-star-rating@4.0.5
    - Star rating component as a rating field in the Posts model. 
@@ -229,13 +320,32 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
 
 [Back to top](#)
 
-#
+
+## **Components**
+Below are some components not featured in user stories testing but which have been implemented within this project that have been reused throughout the project:
+
+1. axiosDefault.js : Send http request to the backend API in the case of user crud actions or get requests for a specific object or list of objects.
+2. Asset.js : exports the loading spinner when/where requied in the site.
+3. Avatar.js exports users' avatar image to the popular profileslist, profile page and navbar profile link. 
+3. MoreDropdown.js : allow authorised users to edit/delete Posts.
+4. CurrentUserContext.js : confirm users logged-in status to determine what functionality is available to that user.
+5. ProfileDataContext.js : provide un/follow ability to authorised user via popular profiles componenet and profile page component.
+6. useRedirect.js : redirects a user to another page if they are not authorised to be on the page they are trying to access.
+7. useClickOutsideToggle.js : Implemented for the mobile dropdown nav component, which allows users to close the expanded navbar by tapping/clicking outside the navbar. It hasn't been reused for another feature yet but could be. One of my future feature will potentially crowd the navbar with navlink so I am planning to use a dropdown menu in the desktop navbar and will have to implement it for that feature eventually. See the [Home page wireframe](readme/home_page.png) for this design feature 
+
+8.  utils.js : supplies functionality to all of the components that utilise the Infinite Scroll.
+
+[Back to top](#)
+
 
 ## **Testing**
+
+
+
 The testing documentation can be viewed [here](/TESTING.md)
 
-[Back to top](#contents)
-#
+[Back to top](#)
+
 
 ## **Bugs**
 ### **Bugs encountered during development**
@@ -279,7 +389,7 @@ This fixed the comment form post request error.
 
 [Back to top](#)
 
-### **Unresolved bugs** 
+### **Unresolved bugs**
 1. The star rating component bug for the edit form: 
    - This bug is recorded in the project board as it appeared during development.
    - It was partly resolved but not completely.
@@ -289,12 +399,13 @@ This fixed the comment form post request error.
    - The stars were not filled in to display the pre-populated value to the user.
       
    **Fix**:
-   - I managed to pass the value of the original post rating to the edit form so that it didn't need to be updated for the form to be validated.
-   - I also tested that the rating value would remain the same as the original post if not updated by the user in the edit form and it passed.
+   - I managed to pass the value of the original post rating to the edit form so that it didn't need to be updated for the form to be validated by passing it to the handleMount function inside the useEffect hook and the setPostData. and using setRating(rating) to pass the fetched rating data and store it in the rating variable. 
+   - I then tested the rating value in the edit form to see if it would remain the same as the original post ating value if not updated by the user in the edit form and it passed.
    - I checked that the value would be updated to a new value if the user input a new star rating and it passed.
    - I thought this would resolve the issue completely but I could not manage to get the stars to display the filled in value of the rating. 
    - After trying a lot of different things and refering back to the component documentation, I had to leave this issue partly unresolved.
    - It would be preferable for the user to see the star rating original value in the edit form, but at least this value is being passed and can be updated or left as is without interfering with the form validation.
+
 #
 2. Sticky follow/unfollow buttons:
 
@@ -311,13 +422,14 @@ This fixed the comment form post request error.
 
 #
 
-## Gitpod set up and deployment
+## **Gitpod set up and deployment**
 - This project was created and developed using gitpod using the following steps: 
+### Set-up in gitpod
    - Navigate to your github repository page and click the green "new" button to create a new repo.
    - choose a name with all lower case letters: trekkers
    - Click the green "create repository" button.
    - Click the Green "Gitpod button to create a workspace.
-   - Enterthe following commands:
+   - Enter the following commands:
       - npx create-react-app . --use-npm
       - npm install -g npm@9.6.6
    - Run npm start to check the app is working.
@@ -339,7 +451,7 @@ This fixed the comment form post request error.
 ### Deployment issues and bugs
 - I did not use the CI gitpod template as it was not availabe and the instructions had changed after the codeanywhere switch.
 - As a result I encountered a lot of issues installingpackages and deployment/ app running issues. 
-- A full report of these issues and the solutions I implemented can be seen in the [issues](https://github.com/HPCarey/trekkers/issues) and [Project Board](https://github.com/users/HPCarey/projects/5/views/1).
+- A full report of these issues and the solutions I implemented can be seen in the [issues](https://github.com/H88PCarey/trekkers/issues) and [Project Board](https://github.com/users/HPCarey/projects/5/views/1).
 
 ### Connect the Frontend app with the Backend API
 - In order to connect not only the deployed Frontend app but also the development version of the app, we need to provide both heroku and local urls to the API on heroku.
@@ -404,12 +516,47 @@ This fixed the comment form post request error.
         - Under the deploy tab, scroll to the bottom of the page and click the "Deploy Branch" button.
         - Ensure the build is successful and open the app.
         - Test all feautures in in the final deployed app to make sure everythin is the same and working as it should. 
+
+[Back to top](#)
+
 #
+
+### Cloning
+Here are the steps to clone the repository:
+Navigate to the GitHub Repository you want to clone to use locally:
+
+- Click on the code drop down button
+- Click on HTTPS
+- Copy the repository link to the clipboard
+- Open your IDE of choice (git must be installed for the next steps)
+- Type git clone copied-git-url into the IDE terminal
+
+The project will now have been cloned on your local machine for use.
+
+Install Dependencies:
+
+```npm install```
+
+Run Application:
+
+```npm start```
+
 [Back to top](#)
 #
+
+### Forking
+Here are the steps to fork the repository:
+
+- Navigate to the GitHub Repository you want to fork.
+
+- On the top right of the page under the header, click the fork button.
+
+- This will create a duplicate of the full project in your GitHub Repository.
+
+[Back to top](#)
+
 ## **Credits**
 ### Code Institute
-
 This project is a variation and laregely based on the [Code Institute Moments](https://github.com/Code-Institute-Solutions/moments) walkthrough project.
 It contains styles and logic from that project which have bee modified for the prupose of this one.
 
@@ -418,7 +565,7 @@ It contains styles and logic from that project which have bee modified for the p
 2. Geeksforgeeks: [Posititive Integer field](https://www.geeksforgeeks.org/positiveintegerfield-django-models/)
 2.	Stack overflow: [Set a default min/max value for inetger field](https://stackoverflow.com/questions/42425933/how-do-i-set-a-default-max-and-min-value-for-an-integerfield-django)
 
-### Bug fixes sources:
+### Bug fix sources:
 1. Due to a change in material by Code Institute to reflect their new IDE provider, I did not have access to the template for gitpod. As a result I had to deal with a lot of bugs in the setup and deployment stage, and any time a package needed to be installed. The list of sources for this as well as my troubleshooting steps and solutions can be found under the "Frontedn bug" label in [Issues](https://github.com/HPCarey/trekkers/issues).
 
 2. Downgrade React version [Dev.to]( https://dev.to/ifeanyichima/how-to-downgrade-from-react-18-to-1702-818)
