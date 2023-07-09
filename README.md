@@ -8,57 +8,77 @@ Trekkers is a social media platform for hikers and people who love the outdoors.
 * [Deployed Back-End page](https://pp5-trekkers-api.herokuapp.com/)
 * [Backend repository](https://github.com/HPCarey/pp5-trekkers-api)
 
-#
-- [**Agile Planning**](#agile-planning)
-	- [**GitHub Project Board**](#github-project-board)
-	- [**Github Issues**](#github-issues)
-	- [**Wireframes**](#wireframes)
-	- [**List of Wireframe pages**](#list-of-wireframe-pages)
-- [**Epics**](#epics)
-	- [Authentication](#authentication)
-	- [Navigation](#navigation)
-	- [Posts](#posts)
-	- [Comments](#comments)
-	- [Profiles](#profiles)
-- [**User Stories**](#user-stories)
-	- [**Epic 1: Authentication**](#epic-1-authentication)
-	- [**Epic 2: Navigation:**](#epic-2-navigation)
-	- [**Epic 3: Posts**](#epic-3-posts)
-	- [**Epic 4: Comments**](#epic-4-comments)
-	- [**Epic 5: Profiles**](#epic-5-profiles)
+## **Contents**
+- [**Planning and Project Conception**](#planning-and-project-conception)
+	- [**Project Goals**](#project-goals)
+	- [**Site Goals**](#site-goals)
+	- [**Future Goals**](#future-goals)
+		- [**GitHub Project Board**](#github-project-board)
+		- [**Github Issues**](#github-issues)
+		- [**Wireframes**](#wireframes)
+		- [**List of Wireframe pages**](#list-of-wireframe-pages)
+	- [**Epics**](#epics)
+		- [Authentication](#authentication)
+		- [Navigation](#navigation)
+		- [Posts](#posts)
+		- [Comments](#comments)
+		- [Profiles](#profiles)
+	- [**User Stories**](#user-stories)
+		- [**Epic 1: Authentication**](#epic-1-authentication)
+		- [**Epic 2: Navigation:**](#epic-2-navigation)
+		- [**Epic 3: Posts**](#epic-3-posts)
+		- [**Epic 4: Comments**](#epic-4-comments)
+		- [**Epic 5: Profiles**](#epic-5-profiles)
+	- [**Design**](#design)
+		- [**Images**](#images)
+		- [**Colour Scheme and Accessibility**](#colour-scheme-and-accessibility)
+		- [**Typography**](#typography)
+- [**Features**](#features)
+	- [**Existing Features**](#existing-features)
+	- [**logo**](#logo)
+	- [**custom 404 page**](#custom-404-page)
+	- [**Future Features**](#future-features)
 - [**Technologies**](#technologies)
 	- [**Languages used**](#languages-used)
 	- [**Databases**](#databases)
-		- [**Cloud storage and deployment services**](#cloud-storage-and-deployment-services)
-	- [Frameworks, tools and libraries](#frameworks-tools-and-libraries)
-		- [Back-End](#back-end)
-		- [Front-End](#front-end)
-		- [**Installed packages**](#installed-packages)
-- [Testing](#testing)
-   - [Manual Testing](/TESTING.md#manual-testing)
-      - [Responsive Testing](/TESTING.md#responsive-testing)
-      - [Lighthouse Testing](/TESTING.md#lighthouse-testing)
-      - [Browser Testing](/TESTING.md#browser-testing)
-      - [User Stories Testing](/TESTING.md#user-stories-testing)
-      - [Features Testing](/TESTING.md#features-testing)
-        
-    - [Code Validation](/TESTING.md#code-validation)
-- [Gitpod set up and deployment](#gitpod-set-up-and-deployment)
+	- [**Cloud storage and deployment services**](#cloud-storage-and-deployment-services)
+	- [**Frameworks, tools and libraries**](#frameworks-tools-and-libraries)
+		- [**API Back-End**](#api-back-end)
+		- [**Front-End**](#front-end)
+	- [**Installed packages, libraries and componenets**](#installed-packages-libraries-and-componenets)
+- [**Components**](#components)
+- [**Testing**](#testing)
+	- [**Manual Testing**](#manual-testing)
+	- [**Test cases**](#test-cases)
+	- [**Integration Testing**](#integration-testing)
+	- [**Code Validation**](#code-validation)
+- [**Bugs**](#bugs)
+	- [**Bugs encountered during development**](#bugs-encountered-during-development)
+	- [**Bugs and issues encountered during testing**](#bugs-and-issues-encountered-during-testing)
+	- [**Unresolved bugs**](#unresolved-bugs)
+- [**Gitpod set up and deployment**](#gitpod-set-up-and-deployment)
+	- [Set-up in gitpod](#set-up-in-gitpod)
 	- [Initial Deployment](#initial-deployment)
 	- [Deployment issues and bugs](#deployment-issues-and-bugs)
 	- [Connect the Frontend app with the Backend API](#connect-the-frontend-app-with-the-backend-api)
 	- [Final Deployment](#final-deployment)
+	- [Cloning](#cloning)
+	- [Forking](#forking)
 - [**Credits**](#credits)
 	- [Code Institute](#code-institute)
 	- [Resources for creating the star rating component:](#resources-for-creating-the-star-rating-component)
-	- [Bug fixes sources:](#bug-fixes-sources)
+	- [Bug fix sources:](#bug-fix-sources)
 
-## **PLanning and Project Conception**
+
+## **Planning and Project Conception**
 ### **Project Goals**
 - The aim of this project was to build a Frontend application using React and to become familiar with developing  applications using component based architecture.
 - This project was built with the use of resuable react-bootstrap components such as the navbar component, dropdown menu, card, media etc. 
-- As well as reusability, React allows for faster rendering and imporved performance by using a virtual DOM that only updates and renders the necessary components of the UI when the user interacts with the site.
-- Another aim of this porject is to connect a frontend app to a backen api.
+- As well as reusability, React allows for faster rendering and imporved performance by using a virtual DOM that only updates and renders the necessary components of the UI when the user interacts with the site and many of the custom components built in this app take adavantage of this and appear throughout the site without needing to be reloaded or are reused in various parts of the site:
+For example:
+   -  The PopularProfiles component which like the navbar is displayed on most of the pages without reloading every time.
+   -  The PostsPage component which is reused for the Home, Feed and Like pages. 
+- Another aim of this project is to connect a frontend app to a backen api.
 - Django Rest Framework was used to create RESTful APIs for the Frontend app.
 - In the drf api, django models are converted into JSON by defining serialisers.
 - These models are the architecture for the custom components for the frontend app such as the Post component. 
@@ -66,21 +86,23 @@ Trekkers is a social media platform for hikers and people who love the outdoors.
 - The React Frontend app is using axios to make http requests to the api endpoints.
 - ReactRouter is implemented for UI-end routing to allow users to navigate between site pages.
 - To see how to connect the Frontend App and the Backend Api, please see [this](#connect-the-frontend-app-with-the-backend-api) part of the deployment section.
-- To  review the drf Backend api endpoints and methods, please see the [backend repo](https://github.com/HPCarey/pp5-trekkers-api).
-[Back to top](#)
+- To  review the drf Backend api endpoints and methods enabling CRUD functionality, please see the [backend repo](https://github.com/HPCarey/pp5-trekkers-api).
+
+[Back to top](#contents)
 
 ### **Site Goals**
 - To build an online community around a common interest of being outdoors, walking and hiking.
-- To allow community members to share picture and information regarding trails and hikes they've done
+- To allow community members to share picture and information regarding trails and hikes they've done.
 - To allow commnunity members to follow other users whose content is interesting to them.
-- To allow users to save posts that are interesting to them about trail they would like to do. 
+- To allow users to save posts that are interesting to them about trails they would like to do. 
+- To allow users to easily search for trails by difficulty and location so they can find posts relevant to their needs.
 
 ### **Future Goals**
 - To implement event features so that community members can use the site to organise hikes and walks in their local areas or arrange hiking holidays/trips.
 - To make the current features more useful by providing google maps locations and directions.
 - Allow users to interact more efficiently by implementing private messaging.
 
-[Back to top](#)
+[Back to top](#contents)
 #
 
  
@@ -91,13 +113,14 @@ Epics, user stories, bugs and issues are recorded on the [Project Board](https:/
 
 ![Screenshot of project board](/readme/kanban-board.png)
 
-[Back to top](#)
+[Back to top](#contents)
 
 #### **Github Issues**
-Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issues and labels. 
-* A list of Frontend Bugs can be viewed via the Frontend Bug label. 
-* A list of backend bugs can be viewed via the Backend bug label.
-* A list of all bugs can be viewed via the bugs label.
+Here is a [link](https://github.com/HPCarey/trekkers/issues?q=is%3Aissue+is%3Aclosed) to the project issues and labels. 
+* A list of Frontend Bugs can be viewed via the [Frontend Bug label](https://github.com/HPCarey/trekkers/issues?q=label%3A%22Frontend+Bugs%22+is%3Aclosed). 
+* A list of backend bugs can be viewed via the [Backend bug label](https://github.com/HPCarey/trekkers/issues?q=label%3A%22Backend+Bugs%22+is%3Aclosed).
+* A list of all bugs can be viewed via the [bugs label](https://github.com/HPCarey/trekkers/issues?q=label%3Abug+is%3Aclosed).
+
 
 
 #### **Wireframes**
@@ -109,10 +132,10 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
 - [Home page](readme/home_page.png)
 - [Sign up page](readme/sign_up_page.png)
 - [Sign in page](readme/sign_in_page.png)
-- [Creat post form](readme/create_post_form.png)
+- [Create post form](readme/create_post_form.png)
 - [Profile page](readme/profile_page.png)
 
-[Back to top](#)
+[Back to top](#contents)
 #
 ### **Epics**
 #### [Authentication](#epic-1-authentication)
@@ -128,7 +151,7 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
 
 1. Sign up: As a **user** I can **create an account** so that I can **access all the site features**
  
-2. Sign in: As a **user** I can **login** so that I can **access features only available to logged in users **
+2. Sign in: As a **user** I can **login** so that I can **access features only available to logged in users**
 
 3. Sign out: As a **user** I can **logout** so that I can **exit my account and prevent others from gaining access**
 
@@ -138,7 +161,7 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
 
 6. Create superuser: As a **site owner** I can **create a superuser** so that **I can give admin users access to the admin panel**.
 
-[Back to top](#)
+[Back to top](#contents)
 #### **Epic 2: Navigation:**
 
 7. As a **user** I can **quickly view my logged in/out status in the navbar** so that I can **decide on my next action**
@@ -148,11 +171,11 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
 
 9. Conditional Rendering: As a **logged out user** I can **view sign in and sign up options** so that I can **easily tell whether I am logged in and can log in easily if not**.
 
-10. Avatar: As a **logged in user** I can **view my profile link and avatar image on the navbar** so that I can **quickly see that I am logged in”
+10. Avatar: As a **logged in user** I can **view my profile link and avatar image on the navbar** so that I can **quickly see that I am logged in**
 
-11. Popular profiles list: As a **logged in user** I can **view other user’s profile names and avatars” so that I can **easily identify and follow other users”
+11. Popular profiles list: As a **logged in user** I can **view other user’s profile names and avatars** so that I can **easily identify and follow other users**
 
-[Back to top](#)
+[Back to top](#contents)
 
 #### **Epic 3: Posts**
 12. Create a post: As a **logged in user** I can **create a new post** so that I can **share my experiences and suggestions for good hikes and walks I’ve been on**.
@@ -163,7 +186,7 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
 
 15. View all posts: As a **user** I can **view all posts** so that I can **see what trails other users have walked and how they were**
 
-16. View post detail: As a **user** I can **view individual post details** so that I can ** view other details and comments about the post**
+16. View post detail: As a **user** I can **view individual post details** so that I can **view other details and comments about the post**
  
 
 17. Like a post: As a **logged in user** I can **like a post** so that I can **quickly show my appreciation for another users content**
@@ -172,7 +195,7 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
 
 19. Search posts: As a **user** I can **search posts** so that I can **find a post by author, trail name or location**
 
-[Back to top](#)
+[Back to top](#contents)
 #### **Epic 4: Comments**
 20. Create a comment: As a **user** I can **leave a comment under a post** so that I can **express my opinion and engage with the content and the community**
 
@@ -184,11 +207,10 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
 
 24. Delete comments: As a **user** I can **delete my comment** so that I can **remove it from the post**
  
-[Back to top](#)
+[Back to top](#contents)
 #### **Epic 5: Profiles**
 25. Profile page: As a **user** I can **view another user’s profile page** so that I can **see their posts and their bio**
  
-
 
 26. User stats: As a **user** I can **see stats via a user profile** so that I can **see how many posts/followers/following/comments they have**
 
@@ -199,6 +221,7 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
  
 29. Update username and password: As a **user** I can **update my username/password** so that I can **make alterations as needed**
 
+[Back to top](#contents)
 ### **Design**
 
 #### **Images**
@@ -206,16 +229,17 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
 * Images of trails I used to populate the site were all taken from free photo stock on [Pixabay](https://www.pixabay.com/)
 
 #### **Colour Scheme and Accessibility**
- * I designed the color scheme around the logo which I used canva to color. I wanted to go with foresty green color palette. 
+ * I designed the color scheme around the logo which I used canva to color. I wanted to go with a foresty green color palette. 
 
- * I got the colors for the backgrounds from these color palettes on [Schemecolor](https://www.schemecolor.com/)
- [Pallete 1](https://www.schemecolor.com/forest-tones.php)
-[Pallette 2](https://www.schemecolor.com/forest-tones.php)
+ * I got the colors for the backgrounds from these color palettes on [Schemecolor](https://www.schemecolor.com/):
+- [Pallete 1](https://www.schemecolor.com/forest-tones.php)
+- [Pallette 2](https://www.schemecolor.com/forest-tones.php)
 
 #### **Typography**
 * I also used canva to decide on the typography along with the design for the logo.
 * I went with Quicksand font which I thought was very minamalist but soft due to the rounded edges. 
 
+[Back to top](#contents)
 
 ## **Features**
 ### **Existing Features**
@@ -224,8 +248,9 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
 ### **logo**
 * Logo was designed by this artist [ItalianLadyBug](https://pixabay.com/users/italianladybug-27190605/).
 * [This](https://pixabay.com/illustrations/hiking-mountain-adventure-travel-7459908/) is the source for the design I found on pixabay.
-* I used [Canva](https://www.canva.com/) to adjust the color to my linking and add the site name.
-* Used as the favicon for the webpage as well as the navbar logo home link.
+* I used [Canva](https://www.canva.com/) to adjust the color to my liking and to add the site name.
+* The logo was used as the favicon for the webpage as well as the navbar logo home link.
+
 ![logo](readme/large-logo.png)
 
 [Back to top](#contents)
@@ -236,7 +261,7 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
 
 ![404](readme/404.JPG)
 
-[Back to top](#)
+[Back to top](#contents)
 #
 ### **Future Features**
 * An Events Feature similar to the Posts feature, whereby users can post about trail meetups and hikes in their local area so users can use the site to arrange real world meetups.
@@ -251,8 +276,8 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
 * Private messaging would be a good feature for a site like this, especially once event organisation becomes a feature.
 * Social Account sign in using apis to allow users to login via their email accounts rather than going through the whole sign up process.
 
-[Back to top](#)
-#
+[Back to top](#contents)
+
 ## **Technologies** 
 ### **Languages used**
 - [Python](https://www.python.org/) 
@@ -268,17 +293,30 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
 
 ### **Cloud storage and deployment services**
 - [Cloudinary](https://cloudinary.com/)
+    - Used to store media files and images.
 - [Heroku](https://www.heroku.com/)
+    - Used to host the deployed sitewhat
+- [ElephantSQL]() 
+    Used to host and operate the PostgresSQL database
+
+[Back to top](#contents)
 
 ### **Frameworks, tools and libraries**
-#### Back-End
+#### **API Back-End**
 - [Django Rest Framework](https://www.django-rest-framework.org/)
 - [Psycopg2](https://pypi.org/project/psycopg2/)
-   - PostgreSQL database adapter for python
-- [JSON Web Tokens](https://jwt.io/)
-   - Manage account authorisation, keep user logged-in for 24 hours.
+- [django_filters](https://django-filter.readthedocs.io/en/stable/guide/install.html) 
+- [dj_rest_auth](https://dj-rest-auth.readthedocs.io/en/latest/installation.html)
+- [rest_framework.authtoken](https://pypi.org/project/django-rest-authtoken/)
+- [dj_rest_auth.registration](https://dj-rest-auth.readthedocs.io/en/latest/installation.html)
+- [allauth](https://django-allauth.readthedocs.io/en/latest/installation.html)
+- [corsheaders](https://pypi.org/project/django-cors-headers/)
+- [JSON WEB tokens](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html)
+
+
+[Back to top](#contents)
    
-#### Front-End
+#### **Front-End**
 - [React JS](https://reactjs.org/)
 - [JSON Web Tokens](https://jwt.io/)
 - [React Bootstrap](https://react-bootstrap-v4.netlify.app/)
@@ -292,10 +330,11 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
 - [Google fonts](https://fonts.google.com/)
 - [Markdown TOC generator](https://magnetikonline.github.io/markdown-toc-generate/)
 
+[Back to top](#contents)
 
-#### **Installed packages, libraries and componenets**
-#### **Front-End**
--React
+### **Installed packages, libraries and componenets**
+
+- React
    - npx create-react-app . --use-npm
    - Main JavaScript framework for creating the UI
 - Node 
@@ -311,14 +350,16 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
    - npm install axios
    - Tells React app to send requests to the api
 - React Infinite scroll
-
+   - npm install react-infinite-scroll-component
+   - Used with list pages instead of pagination
+   - Utilised by posts and comments when there are long lists of these components
 - jwtDecode library: 
    - npm install jwt-decode 
    - Stops unneccessary network requests every time unauthenticated user interacts with the app.
    - Stores the logged in user's refresh token timestamp in the browser using localStorage.
    - Then check if this timestamp exists and only if it does make attempt to refresh access token.
 
-[Back to top](#)
+[Back to top](#content)
 
 
 ## **Components**
@@ -327,37 +368,36 @@ Below are some components not featured in user stories testing but which have be
 1. axiosDefault.js : Send http request to the backend API in the case of user crud actions or get requests for a specific object or list of objects.
 2. Asset.js : exports the loading spinner when/where requied in the site.
 3. Avatar.js exports users' avatar image to the popular profileslist, profile page and navbar profile link. 
-3. MoreDropdown.js : allow authorised users to edit/delete Posts.
+3. MoreDropdown.js : displays menu to authorised users with options to edit/delete Posts, comments and profile details. 
 4. CurrentUserContext.js : confirm users logged-in status to determine what functionality is available to that user.
 5. ProfileDataContext.js : provide un/follow ability to authorised user via popular profiles componenet and profile page component.
 6. useRedirect.js : redirects a user to another page if they are not authorised to be on the page they are trying to access.
-7. useClickOutsideToggle.js : Implemented for the mobile dropdown nav component, which allows users to close the expanded navbar by tapping/clicking outside the navbar. It hasn't been reused for another feature yet but could be. One of my future feature will potentially crowd the navbar with navlink so I am planning to use a dropdown menu in the desktop navbar and will have to implement it for that feature eventually. See the [Home page wireframe](readme/home_page.png) for this design feature 
+7. useClickOutsideToggle.js : Implemented for the mobile dropdown nav component, which allows users to close the expanded navbar by tapping/clicking outside the navbar. 
+   - It hasn't been reused for another feature yet but will be for future feature. 
+   - One of my future feature will potentially crowd the navbar with too many navlinks so I am planning to use a dropdown menu in the desktop navbar and will have to implement it for that feature eventually. 
+   - See the [Home page wireframe](readme/home_page.png) for this design feature 
 
 8.  utils.js : supplies functionality to all of the components that utilise the Infinite Scroll.
 
-[Back to top](#)
+[Back to top](#contents)
 
 
 ## **Testing**
 
-
-
 The testing documentation can be viewed [here](/TESTING.md)
 
-[Back to top](#)
+[Back to top](#contents)
 
 
 ## **Bugs**
 ### **Bugs encountered during development**
-* I have recorded the primary bugs and issues encountered during the development process in the issues and [Project Board](https://github.com/users/HPCarey/projects/5/views/1).
-* The solutions and sources to the bugs encountered can also be found there.
+* I have recorded the primary bugs and issues encountered during the development process in the [issues](https://github.com/HPCarey/trekkers/issues?q=is%3Aissue+is%3Aclosed)  and [Project Board](https://github.com/users/HPCarey/projects/5/views/1).
+* The solutions and sources for solutions to the bugs encountered can also be found there.
+   * A list of Frontend Bugs can be viewed via the [Frontend Bug label](https://github.com/HPCarey/trekkers/issues?q=label%3A%22Frontend+Bugs%22+is%3Aclosed). 
+   * A list of backend bugs can be viewed via the [Backend bug label](https://github.com/HPCarey/trekkers/issues?q=label%3A%22Backend+Bugs%22+is%3Aclosed).
+   * A list of all bugs can be viewed via the [bugs label](https://github.com/HPCarey/trekkers/issues?q=label%3Abug+is%3Aclosed).
 
-Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issues and labels. 
-* A list of Frontend Bugs can be viewed via the Frontend Bug label. 
-* A list of backend bugs can be viewed via the Backend bug label.
-* A list of all bugs can be viewed via the bugs label.
-
-[Back to top](#)
+[Back to top](#contents)
 ### **Bugs and issues encountered during testing**
 * The bugs encountered during the manual test phase were as follows: 
 1.	Follow/unfollow buttons on the profile pages needed a top margin so a class was made in the button styles module just to target these. 
@@ -387,7 +427,7 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues) to the project issu
    ```
 This fixed the comment form post request error.
 
-[Back to top](#)
+[Back to top](#contents)
 
 ### **Unresolved bugs**
 1. The star rating component bug for the edit form: 
@@ -406,6 +446,7 @@ This fixed the comment form post request error.
    - After trying a lot of different things and refering back to the component documentation, I had to leave this issue partly unresolved.
    - It would be preferable for the user to see the star rating original value in the edit form, but at least this value is being passed and can be updated or left as is without interfering with the form validation.
 
+[Back to top](#contents)
 #
 2. Sticky follow/unfollow buttons:
 
@@ -418,9 +459,9 @@ This fixed the comment form post request error.
       - This profile was not created by me but either by my mentor or by an assessor from the previous submission. 
       - I'm not sure why only this one profile is affected but the other profile follow buttons are beaving as expected and I have had to leave the problematic one unresolved for now.
 
-[Back to top](#)
+[Back to top](#contents)
 
-#
+
 
 ## **Gitpod set up and deployment**
 - This project was created and developed using gitpod using the following steps: 
@@ -438,7 +479,7 @@ This fixed the comment form post request error.
       - Prettier : (Code formatter) by esbenp
    - Commit  and push to github tr prepare for initial deployment.
 
-[Back to top](#)
+[Back to top](#contents)
 #
 ### Initial Deployment
 - Navigate to heroku for initial deployment
@@ -452,6 +493,8 @@ This fixed the comment form post request error.
 - I did not use the CI gitpod template as it was not availabe and the instructions had changed after the codeanywhere switch.
 - As a result I encountered a lot of issues installingpackages and deployment/ app running issues. 
 - A full report of these issues and the solutions I implemented can be seen in the [issues](https://github.com/H88PCarey/trekkers/issues) and [Project Board](https://github.com/users/HPCarey/projects/5/views/1).
+
+[Back to top](#contents)
 
 ### Connect the Frontend app with the Backend API
 - In order to connect not only the deployed Frontend app but also the development version of the app, we need to provide both heroku and local urls to the API on heroku.
@@ -475,7 +518,7 @@ This fixed the comment form post request error.
       import "./api/axiosDefaults";
    ```
 
-[Back to top](#)
+[Back to top](#contents)
 #
 ### Final Deployment
 - In GITPOD IDE:
@@ -508,6 +551,7 @@ This fixed the comment form post request error.
       "build": "react-scripts build",
    ```
    Please see the bugs for full details of this issue.
+
    5. Add a Procfile to the root of the project with the following command: 
    ```
    web: serve -s build
@@ -517,7 +561,7 @@ This fixed the comment form post request error.
         - Ensure the build is successful and open the app.
         - Test all feautures in in the final deployed app to make sure everythin is the same and working as it should. 
 
-[Back to top](#)
+[Back to top](#contents)
 
 #
 
@@ -541,7 +585,7 @@ Run Application:
 
 ```npm start```
 
-[Back to top](#)
+[Back to top](#contents)
 #
 
 ### Forking
@@ -553,7 +597,7 @@ Here are the steps to fork the repository:
 
 - This will create a duplicate of the full project in your GitHub Repository.
 
-[Back to top](#)
+[Back to top](#contents)
 
 ## **Credits**
 ### Code Institute
@@ -577,5 +621,5 @@ It contains styles and logic from that project which have bee modified for the p
 4. Hide "choose file" button for images off screen with css .Hide class [source](https://stackoverflow.com/questions/6746649/how-can-i-hide-an-element-off-the-edge-of-the-screen#:~:text=Just%20add%20overflow%3Ahidden%20to,That%20should%20do%20the%20trick.).
 
 
-[Back to top](#)
+[Back to top](#contents)
 
