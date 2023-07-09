@@ -3,18 +3,18 @@
 #
 - [Manual Testing](#manual-testing)
     - [Responsive Testing](#responsive-testing)
-    - [Lighthouse Testing](#lighthouse-testing)
     - [Browser Testing](#browser-testing)
     - [User Stories Testing](#user-stories-testing)
+    - [Other Test Cases](#other-test-cases)
+
 - [Code Validation](#code-validation)
 
 ## **Manual Testing**
 
 * This site was tested manually by:
     - Testing the UI and functionality of features for different device sizes and browsers.
-    - Evaluating performance and loading times using lighthouse and interacting wiht the site as a user.
     - Ensuring that user story features are functioning as they should be with the expected outcome from specific user actions.
-    - All links and user pathways function as intended and navigate the user as expected through the site.
+    - All links and url pathways function as intended and navigate the user as expected through the site.
 * The details of how the manual testing was carried out can be seen below.
 * I have also included the code validation in the TESTING document.
 
@@ -44,20 +44,6 @@
  ![amiresponsive](readme/desktop-testing/amiresponsive-viewport-sizes.JPG)
 
 * I also included some screenshots of features in mobile size in the user story testing to show the responsive design. 
-
-[Back to top](#testing)
-</details>
-
-- - -
-## Lighthouse testing
-
-<details>
-<summary>👇</summary>
-
-* Lighthouse testing in chrome DevTools showed an overall performance of 99% and good SEO and Accessibility scores.
-* There were some suggestions to improve best practice scores which will be added to the future features for this site.
-
-    ![Lighthouse results](static/readme/testing/lighthouse-testing.JPG)
 
 [Back to top](#testing)
 </details>
@@ -108,7 +94,7 @@ The User Stories and features were continuously tested during development and th
 [Back to top](#testing)
 
 #
-2. Sign in: As a **user** I can **login** so that I can **access features only available to logged in users **
+2. Sign in: As a **user** I can **login** so that I can **access features only available to logged in users**
 
     - Sign in page allows users who have created an account to sign in in order to access all the site features.
     - Handles errors for incorrect credentials and blank fields.
@@ -132,7 +118,7 @@ The User Stories and features were continuously tested during development and th
     ![desktop-logged-out-nav](readme/desktop-testing/logged-in-nav.JPG)
 
     - When the user clicks the sign out button they are redirected to the home page.
-    - Once logged out the Navbar will change to reflect the users ogged out status and provides the links to sign in and sign up.
+    - Once logged out the Navbar will change to reflect the user's logged out status and provides the links to sign in and sign up.
 
     ![desktop-logged-out-nav](readme/desktop-testing/logged-out-nav.jpg)
 
@@ -147,9 +133,11 @@ The User Stories and features were continuously tested during development and th
 
 #
 
-5. Create admin panel: As a **site owner** I can **access the admin panel** so that **I have access to all site features and functionality**.anel can be accessed by those with the superuser credentials.
+5. Create admin panel: As a **site owner** I can **access the admin panel** so that **I have access to all site features and functionality**
 
-  - This is a Backend api feature, please see the relevant readme [here](https://github.com/HPCarey/pp5-trekkers-api).
+  - Admin Panel can be accessed by those with the superuser credentials.
+
+  - This is a Backend api feature, please see the relevant readme [here](https://github.com/HPCarey/pp5-trekkers-api) and the [relevant backend api](https://pp5-trekkers-api.herokuapp.com/)
 
 [Back to top](#testing)
 
@@ -173,11 +161,13 @@ The User Stories and features were continuously tested during development and th
 #### **User Stories**
 7. As a **user** I can **quickly view my logged in/out status in the navbar** so that I can **decide on my next action**
 
-    - The Navbar displays a home, sign in and sign up link to logged out users so they can choose to interact with the site on a read only basis or sign in/up to access more features
-    ![desktop-logged-out-nav](readme/desktop-testing/logged-out-nav.jpg)
+    - The Navbar displays a home, sign in and sign up link to logged out users so they can choose to interact with the site on a read only basis or sign in/up to access more features.
+
+         ![desktop-logged-out-nav](readme/desktop-testing/logged-out-nav.jpg)
 
     - Once signed in the navbar gives the user access to other actions and pages such as add post, liked posts, feed and the users profile link with their avatar.
-    ![desktop-logged-out-nav](readme/desktop-testing/logged-in-nav.JPG)
+
+         ![desktop-logged-out-nav](readme/desktop-testing/logged-in-nav.JPG)
 
 [Back to top](#testing)
 #
@@ -189,9 +179,9 @@ The User Stories and features were continuously tested during development and th
     - When the user hovers over a navlink it will go green like the active navlink to help user know which link their mouse is over.
     - Both the logo and site name act as home navlinks to make it convenient and easy to get back to the home page.
 
-    ![mobile-nav](readme/desktop-testing/mobile-nav-sm.jpg) 
-    ![mobile-logged-out](readme/desktop-testing/mobile-nav-logged-out.jpeg) 
-    ![mobile-logged-in](readme/desktop-testing/mobile-logged-in-nav-sm.jpg)
+        ![mobile-nav](readme/desktop-testing/mobile-nav-sm.jpg) 
+        ![mobile-logged-out](readme/desktop-testing/mobile-nav-logged-out.jpeg) 
+        ![mobile-logged-in](readme/desktop-testing/mobile-logged-in-nav-sm.jpg)
 
 [Back to top](#testing)
 #
@@ -202,7 +192,7 @@ The User Stories and features were continuously tested during development and th
 
 [Back to top](#testing)
 
-10. Avatar: As a **logged in user** I can **view my profile link and avatar image on the navbar** so that I can **quickly see that I am logged in”
+10. Avatar: As a **logged in user** I can **view my profile link and avatar image on the navbar** so that I can **quickly see that I am logged in**.
 
     - Already established in test case 7.
 
@@ -213,7 +203,8 @@ The User Stories and features were continuously tested during development and th
     - The popular profiles list is displayed on the right of the screen for desktop users and at the top just under navbar for mobile users.
     - Profile avatars act as links to other users profiles, all these links have been tested and redirect to the correct profiles.
 
-    ![popular-profiles](readme/desktop-testing/popular-profiles.jpg)![mobile-popular-profiles](readme/desktop-testing/mobile-popular-profiles.jpg)
+        ![popular-profiles](readme/desktop-testing/popular-profiles.jpg)
+        ![mobile-popular-profiles](readme/desktop-testing/mobile-popular-profiles.jpg)
 
 [Back to top](#testing)
 
@@ -243,9 +234,11 @@ The User Stories and features were continuously tested during development and th
 
 
     - Images over 2mb will throw an error to conserve cloud storage space.
-            ![add-post-form-errors](readme/desktop-testing/image-too-large-error.JPG)
+
+        ![add-post-form-errors](readme/desktop-testing/image-too-large-error.JPG)
 
     - Once an image has been uploaded to the form a change image utton will appear to allow user to change the image.
+
         ![add-post-form](readme/desktop-testing/change-image-button-diff-dropdown.JPG)
     - There is a dropdown menu containing 4 choices of difficulty level with the default value set to easy.
 
@@ -315,12 +308,13 @@ The User Stories and features were continuously tested during development and th
 17. Like a post: As a **logged in user** I can **like a post** so that I can **quickly show my appreciation for another users content**
 
     - Logged-in users can like posts via the home page, post detail page or their feed.
+    - Clicking the heart icon will add the post to liked posts and fills in the heart icon with a red color.
 
             
         ![liked-no-results](readme/desktop-testing/liked-no-results.JPG)
         ![liked-after-liking](readme/desktop-testing/liked-after-liking.JPG)
 
-    - Clicking the heart icon will add the post to liked posts and fills in the heart icon with a red color.
+
     - The likes count for the post will go up by 1.
     - Clicking the heart icon again will remove the post from liked posts and will remove the filled in red colour.
     - The likes count for the post will go down by 1.
@@ -331,7 +325,8 @@ The User Stories and features were continuously tested during development and th
     
 
     - Logged-out users cannot like posts.
-    ![log-in-to-like](readme/desktop-testing/log-in-to-like.png)
+
+        ![log-in-to-like](readme/desktop-testing/log-in-to-like.png)
 
     - Users cannot like their own posts.
 
@@ -359,7 +354,9 @@ The User Stories and features were continuously tested during development and th
       ![search-bar-mobile](readme/desktop-testing/mobile-popular-profiles.jpg)
 
      - The search function returns relevant posts as expected according to the user's search words.
+
         ![search-location](readme/desktop-testing/search-location.JPG)
+
         ![search-difficulty](readme/desktop-testing/search-difficulty.JPG)
 
 
@@ -367,7 +364,7 @@ The User Stories and features were continuously tested during development and th
 
         ![search-multiple](readme/desktop-testing/search-multiple-key-words.JPG)
 
-    - If the users search keywords don't match any posts an error message is displayed iinforming the user to adjust the search term. 
+    - If the users search keywords don't match any posts an error message is displayed informing the user to adjust the search term. 
             
         ![no-search-results](readme/desktop-testing/search-no-results.JPG)
         
@@ -422,8 +419,10 @@ The User Stories and features were continuously tested during development and th
 
     - If the user is the owner of a comment, a three dot dropdown will be displayed in the right hand corner of the published comment.
     - This dropdown menu contains the icon-link to open the edit comment form. 
-    ![comment-edit icon](readme/desktop-testing/comment-view.JPG)
-    ![edit-comment-form](readme/desktop-testing/edit-comment-form.JPG)
+
+        ![comment-edit icon](readme/desktop-testing/comment-view.JPG)
+        ![edit-comment-form](readme/desktop-testing/edit-comment-form.JPG)
+
     - If the user makes a change to the comment and clicks the save button, the post detail page will display the updated comment and updated time. 
     - If the user clicks cancel, the post detail page will display the original comment.
 
@@ -436,8 +435,9 @@ The User Stories and features were continuously tested during development and th
 
     - The delete icon is also available to comment owners via the three dot dropdown.
     - If the user clicks the delete icon, the comment is removed from the post detail page and the comments count goes down by 1. 
-    ![delete-comment](readme/desktop-testing/delet-comment.JPG)
-    ![deleted-comment](readme/desktop-testing/deleted-comment.JPG)
+        
+        ![delete-comment](readme/desktop-testing/delet-comment.JPG)
+        ![deleted-comment](readme/desktop-testing/deleted-comment.JPG)
 
 [Back to top](#testing)
 
@@ -456,7 +456,9 @@ The User Stories and features were continuously tested during development and th
 25. Profile page: As a **user** I can **view another user’s profile page** so that I can **see their posts and their bio**
 
     - Both logged-in and logged-out users have access to other users' profile pages.
-    - Logged-in users will have access to a follow/unfollow button and edit dropdown menu for their own profile. 
+    - Logged-in users will have access to a follow/unfollow button when visiting other users' profiles
+    - Logged-in users will have acccess to an edit dropdown menu for their own profile. 
+
         ![profile-logged-out](readme/desktop-testing/profile-logged-out.JPG)
         ![profile-logged-in](readme/desktop-testing/profile-logged-in.JPG)
 
@@ -489,7 +491,7 @@ The User Stories and features were continuously tested during development and th
 27. Follow/Unfollow a user: As a **logged in user** I can **follow other users whose content is more relevant or meaningful to me** so that I can **view content filtered by the users I follow**
 
     - As seen above, logged-in users have access to a follow button so that they can follow users whose content they enjoy.
-    -The follow button toggles between follow and unfollow depending on whether the user currently follows the given profile or not. 
+    - The follow button toggles between follow and unfollow depending on whether the user currently follows the given profile or not. 
     - The posts of profile owners that the current user follows will be added to their feed, so they can easily see when a user they follow posts new content.
     - If the current logged-in user doesn't follow any profiles, their feed will display a message suggesting that they follow a profile. 
 
@@ -571,6 +573,29 @@ The User Stories and features were continuously tested during development and th
 </details>
 </details>
 
+## Other Test Cases
+
+<details>
+<summary>👇</summary>
+
+* Outside the user story test cases, the following was also tested:
+1. Unauthorised users cannot access restricted pages by directly entering the url path. 
+    - This was tested for edit forms, liked pages, feed and create forms by entering the url directly. 
+    - For example the below url was entered with an id value taken from a logged in users profile id and was put directly into the browser to see if a logged out user could access someone's profile and edit it:
+    ```
+        https://trekkers.herokuapp.com/profiles/:id /edit
+    ```
+
+    - In each case, logged out users cannot access these pages and will be redirected to the home page.
+    - Unauthorised users will not be able to access other user's profile forms to  edit or delete their information
+2.  A 404 page is dsiplayed to users who type an unknown url path into the browser:
+
+    ![html-validation](readme/404.JPG)
+
+
+[Back to top](#testing)
+</details>
+
 - - -
 
 ## Code Validation
@@ -581,91 +606,9 @@ The User Stories and features were continuously tested during development and th
 1. ### **HTML Validation**
 
 HTML validation was done using 
-[W3C Markup Validator](https://validator.w3.org/). In order to validate the HTML without getting errors due to the Django template tags, the following steps were followed:
-
-1. Navigate to the deployed site url using the google chrome browser.
-2. Navigate to the page of the site you want to validate.
-3. Right click anywhere on said page and select "View page source".
-4. Copy the source code and open the validator.
-5. Select Validate by direct input and paste the code into the validator field and click "Check"
-
-Below are the issues encountered during initial validation: 
-
-**Home Page**
-
-* A warning to add a language attribute to the html tag
-* Several Info messages to remove trailing / from self-closing elements like img and link. 
-* I discovered that these / were getting added automatically whenever I used the prettier command to tidy up the template code. 
-    ![home-page](static/readme/testing/code-validation/hmtl-val-homepage.JPG)
-
-    ![all-messages](static/readme/testing/code-validation/trailing-slash-errors.JPG)
-
-* The results after cleaning up these issues and re-deploying to heroku contain no errors:
-
-    ![all-messages](static/readme/testing/code-validation/html-homepage-final.JPG)
-
-
-[Back to top](#testing)
-
-**Sign in Page**
-
-* No errors
-
-**Sign up Page**
-
-* No errors
-
-**Sign out Page**
-
-* No errors
-
-**Add booking form page**
-
-* An attribute error for using "placeholder" with date input. The source of this error was in the forms.py date widget. I simply removed the placeholder attribute.
-* The end tag error and unlcosed element were related. Both errors were dealt with upon locating the unclosed div and closing it.
-
-    ![booking-page](static/readme/testing/code-validation/booking_form_validator_errors.JPG)
-
-* The final results after addressing these issues contain no errors:
-
-    ![booking-page](static/readme/testing/code-validation/add_booking-final.JPG)
-
-[Back to top](#testing)
-
-**Update booking form page**
-
-* Unsurprisingly the same unclosed div error results occured on this page as the one in the booking form page. Since I create the update form template by copy, pasting and making adjustments to the booking form, this was expected and fixed in the same manner.
-
-
-    ![booking-page](static/readme/testing/code-validation/update_booking_error.JPG)
-
-* Final results after fixes:
-
-    ![booking-page](static/readme/testing/code-validation/update_booking-final.JPG)
-
-
-[Back to top](#testing)
-
-**User Profile page**
-
-* No errors
-
-
-**Cancel appoinment confirmation page**
-
-* An empty attribute value error for the form attribute action="".
-
-    ![booking-page](static/readme/testing/code-validation/cancel_confirmation_error.JPG)
-
-* Results after removing the unneeded attribute:
-
-    ![booking-page](static/readme/testing/code-validation/cancel-page-final.JPG)
-
-
-**404 page**
-
-* No errors
-
+[W3C Markup Validator](https://validator.w3.org/). 
+- No html errors were found.
+![html-validation](readme/desktop-testing/html-validation-results.JPG)
 [Back to top](#testing)
 #
 
@@ -707,10 +650,12 @@ CSS Validation was done using [Jigsaw](https://jigsaw.w3.org/css-validator)
 - Most of the code validation was done through the gitpod ide problems tab and with the help of the prettier code formatting extension.
 - For good measure, I ran the jsx files through this [eslint](https://eslint.org/play/). 
 - These are the settings I used for this validator so as not to get unrelated javascript errors as a result of the html tags in jsx. 
+
  ![settings](readme/desktop-testing/eslinter-setup.JPG)
 
 - It was not an ideal way to validate due to the fact that it is bound to throw unused variable/undefined variable errors because of the nature of importing/exporting components and variables between the different files. 
 - I ignored the above error types and checked for syntax errors, and found the code to be clean. 
+
  ![parsing](readme/desktop-testing/eslint-validator-errors.JPG)
 
 [Back to top](#testing)
