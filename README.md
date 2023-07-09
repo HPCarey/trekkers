@@ -74,11 +74,11 @@ Trekkers is a social media platform for hikers and people who love the outdoors.
 ### **Project Goals**
 - The aim of this project was to build a Frontend application using React and to become familiar with developing  applications using component based architecture.
 - This project was built with the use of resuable react-bootstrap components such as the navbar component, dropdown menu, card, media etc. 
-- As well as reusability, React allows for faster rendering and imporved performance by using a virtual DOM that only updates and renders the necessary components of the UI when the user interacts with the site and many of the custom components built in this app take adavantage of this and appear throughout the site without needing to be reloaded or are reused in various parts of the site:
+- As well as reusability, React allows for faster rendering and imporved performance by using a virtual DOM that only updates and renders the necessary components of the UI when the user interacts with the site and many of the custom components built in this app take adavantage of this and appear throughout the site without needing to be reloaded or are reused in various parts of the site.
 For example:
    -  The PopularProfiles component which like the navbar is displayed on most of the pages without reloading every time.
    -  The PostsPage component which is reused for the Home, Feed and Like pages. 
-- Another aim of this project is to connect a frontend app to a backen api.
+- Another aim of this project is to connect a frontend app to a backend api.
 - Django Rest Framework was used to create RESTful APIs for the Frontend app.
 - In the drf api, django models are converted into JSON by defining serialisers.
 - These models are the architecture for the custom components for the frontend app such as the Post component. 
@@ -233,7 +233,7 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues?q=is%3Aissue+is%3Acl
 
  * I got the colors for the backgrounds from these color palettes on [Schemecolor](https://www.schemecolor.com/):
 - [Pallete 1](https://www.schemecolor.com/forest-tones.php)
-- [Pallette 2](https://www.schemecolor.com/forest-tones.php)
+- [Pallette 2](https://www.schemecolor.com/paint-color-combination.php)
 
 #### **Typography**
 * I also used canva to decide on the typography along with the design for the logo.
@@ -297,7 +297,7 @@ Here is a [link](https://github.com/HPCarey/trekkers/issues?q=is%3Aissue+is%3Acl
 - [Heroku](https://www.heroku.com/)
     - Used to host the deployed sitewhat
 - [ElephantSQL]() 
-    Used to host and operate the PostgresSQL database
+    - Used to host and operate the PostgresSQL database
 
 [Back to top](#contents)
 
@@ -407,7 +407,7 @@ The testing documentation can be viewed [here](/TESTING.md)
 
    **Fix**: 
    - After investigating routes and comment forms, I located the problem in the  PostPage.js, so the problem was with the post detail code not the comment form. 
-   - I was able to locate the issue by refering back through my original wlakthrough project code for this component.
+   - I was able to locate the issue by refering back through my original walkthrough project code for this component.
    - The variable "post" was missing the property "results" in the usestate hook.
    - It was set to:
    ```
@@ -440,7 +440,7 @@ This fixed the comment form post request error.
       
    **Fix**:
    - I managed to pass the value of the original post rating to the edit form so that it didn't need to be updated for the form to be validated by passing it to the handleMount function inside the useEffect hook and the setPostData. and using setRating(rating) to pass the fetched rating data and store it in the rating variable. 
-   - I then tested the rating value in the edit form to see if it would remain the same as the original post ating value if not updated by the user in the edit form and it passed.
+   - I then tested the rating value in the edit form to see if it would remain the same as the original post rating value if not updated by the user in the edit form and it passed.
    - I checked that the value would be updated to a new value if the user input a new star rating and it passed.
    - I thought this would resolve the issue completely but I could not manage to get the stars to display the filled in value of the rating. 
    - After trying a lot of different things and refering back to the component documentation, I had to leave this issue partly unresolved.
@@ -456,8 +456,9 @@ This fixed the comment form post request error.
    **Fix**:
       - After doing a code review and using an eslinter to clean up some code and removing typos and commented out code, I found that the sticky follow button issue had resolved for all but one profile.
       - The profile "testUser123" does not always work when I click it. It does not toggle between follow/unfollow and the followers count does not change. 
+      - In the dev tools console, a 400 (Bad Request) error displays saying failed to load resource.
       - This profile was not created by me but either by my mentor or by an assessor from the previous submission. 
-      - I'm not sure why only this one profile is affected but the other profile follow buttons are beaving as expected and I have had to leave the problematic one unresolved for now.
+      - I'm not sure why only this one profile is affected but the other profile follow buttons are behaving as expected without any console errors and I have had to leave this one as unresolved for now.
 
 [Back to top](#contents)
 
@@ -487,7 +488,7 @@ This fixed the comment form post request error.
 - Give the app a name and select the region, I selected Europe for this app. 
 - Click the Create app button 
 - Under the "Deploy" tab, click on github for deployment method and connect the app to the [trekkers](https://github.com/HPCarey/trekkers/tree/main) github repositiory.
-- Once the app  is connected to the correct github repository, click "Deploy Branch". and open the app in the browser to make sure it works. 
+- Once the app  is connected to the correct github repository, click "Deploy Branch" and open the app in the browser to make sure it works. 
 
 ### Deployment issues and bugs
 - I did not use the CI gitpod template as it was not availabe and the instructions had changed after the codeanywhere switch.
@@ -499,67 +500,68 @@ This fixed the comment form post request error.
 ### Connect the Frontend app with the Backend API
 - In order to connect not only the deployed Frontend app but also the development version of the app, we need to provide both heroku and local urls to the API on heroku.
 - This was done using the following steps: 
-   1. Navigate to the deployed Backend api on heroku and go to the "Settings" tab.
-   2. Set two new Config Vars with the following key:value: 
-      - CLIENT_ORIGIN : https://trekkers.herokuapp.com 
-      - CLIENT_ORIGIN_DEV : https://3000-githubname-appname-435h43j34h543h-eu101.gitpod.io
-       - Note that the CLIENT_ORIGIN_DEV value might need to be updated in the Config Vars as this is not a permanent value and may change during development.
-      - The CLIENT-ORIGIN-DEV in this example is not an actual local url for security reasons. 
+1. Navigate to the deployed Backend api on heroku and go to the "Settings" tab.
+2. Set two new Config Vars with the following key:value: 
+   - CLIENT_ORIGIN : https://trekkers.herokuapp.com 
+   - CLIENT_ORIGIN_DEV : https://3000-githubname-appname-435h43j34h543h-eu101.gitpod.io
+      - Note that the CLIENT_ORIGIN_DEV value might need to be updated in the Config Vars as this is not a permanent value and may change during development.
+   - The CLIENT-ORIGIN-DEV in this example is not an actual local url for security reasons. 
 - Next we need to tell the Frontend app where to send requests to.
 - This was done using the Axios library using the following steps: 
-   1. Install the Axios library : npm install axios.
-   2. Create an api folder inside the src folder and inside create an axiosDefaults.js file. 
-   3. Set the baseURL to the deployed api,and set the content type and Credentials.
+1. Install the Axios library : npm install axios.
+2. Create an api folder inside the src folder and inside create an axiosDefaults.js file. 
+3. Set the baseURL to the deployed api,and set the content type and Credentials.
 
 
-       ![axios](/readme/axios.JPG)
-   4. Import into App.js: 
-   ```
-      import "./api/axiosDefaults";
-   ```
+      ![axios](/readme/axios.JPG)
+4. Import into App.js: 
+```
+   import "./api/axiosDefaults";
+```
 
 [Back to top](#contents)
 #
 ### Final Deployment
 - In GITPOD IDE:
-   1. Remove React.StrictMode component from index.js.
-   2. Optimise bootstrap imports by making sure each component is imported individually:
-   Example:
 
-      ```
-      import Navbar from "react-bootstrap/Navbar";
-      import Container from "react-bootstrap/Container";
-      import Nav from "react-bootstrap/Nav";
-      ```
-   3. Remove console.logs
-      - note: I am following the advice of the moments walkthrough instructions and have left the console.logs inside the catch blocks commented out fr easy access to debug things later.
+1. Remove React.StrictMode component from index.js.
+2. Optimise bootstrap imports by making sure each component is imported individually:
+Example:
 
-   4. Add the Heroku deployment commands in package.json in the "scripts" section.
    ```
-      "heroku-prebuild": "npm install -g serve",
+   import Navbar from "react-bootstrap/Navbar";
+   import Container from "react-bootstrap/Container";
+   import Nav from "react-bootstrap/Nav";
    ```
-   Note: Due to some dependency conflicts I have an opesnssl legacy provider tag on the start and build commands in the scripst sectionof package.json. 
-   - This needs to be removed before the deployment commit and push or the heroku deployment build will fail. 
-   - If you want to run this app locally and there is an error, check if the openssl legacy provider tag is there and if not add it according to the below example: 
-   ```
-      "start": "react-scripts --openssl-legacy-provider start",
-      "build": "react-scripts --openssl-legacy-provider build", 
-   ```
-   - If you wish to make changes and deploy, remember to readjust these values before committing:
-   ```
-      "start": "react-scripts start",
-      "build": "react-scripts build",
-   ```
-   Please see the bugs for full details of this issue.
+3. Remove console.logs
+   - note: I am following the advice of the moments walkthrough instructions and have left the console.logs inside the catch blocks commented out fr easy access to debug things later.
 
-   5. Add a Procfile to the root of the project with the following command: 
-   ```
-   web: serve -s build
-   ```
-   6. After pushing the final version to GitHub, navigate to the app on heroku.
-        - Under the deploy tab, scroll to the bottom of the page and click the "Deploy Branch" button.
-        - Ensure the build is successful and open the app.
-        - Test all feautures in in the final deployed app to make sure everythin is the same and working as it should. 
+4. Add the Heroku deployment commands in package.json in the "scripts" section.
+```
+   "heroku-prebuild": "npm install -g serve",
+```
+Note: Due to some dependency conflicts I have an opesnssl legacy provider tag on the start and build commands in the scripst sectionof package.json. 
+- This needs to be removed before the deployment commit and push or the heroku deployment build will fail. 
+- If you want to run this app locally and there is an error, check if the openssl legacy provider tag is there and if not add it according to the below example: 
+```
+   "start": "react-scripts --openssl-legacy-provider start",
+   "build": "react-scripts --openssl-legacy-provider build", 
+```
+- If you wish to make changes and deploy, remember to readjust these values before committing:
+```
+   "start": "react-scripts start",
+   "build": "react-scripts build",
+```
+Please see the bugs for full details of this issue.
+
+5. Add a Procfile to the root of the project with the following command: 
+```
+web: serve -s build
+```
+6. After pushing the final version to GitHub, navigate to the app on heroku.
+      - Under the deploy tab, scroll to the bottom of the page and click the "Deploy Branch" button.
+      - Ensure the build is successful and open the app.
+      - Test all feautures in in the final deployed app to make sure everythin is the same and working as it should. 
 
 [Back to top](#contents)
 
